@@ -1,11 +1,10 @@
 import React from "react";
-import { Layout, Menu, Breadcrumb } from "antd";
+import { Layout, Menu, Breadcrumb, Button } from "antd";
 import {
   UserOutlined,
   LaptopOutlined,
   NotificationOutlined,
 } from "@ant-design/icons";
-import "antd/dist/antd.css";
 import "./App.css";
 
 const { SubMenu } = Menu;
@@ -16,7 +15,7 @@ function App() {
     <Layout>
       <Header className="header">
         <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
+        <Menu mode="horizontal" defaultSelectedKeys={["2"]}>
           <Menu.Item key="1">nav 1</Menu.Item>
           <Menu.Item key="2">nav 2</Menu.Item>
           <Menu.Item key="3">nav 3</Menu.Item>
@@ -88,7 +87,7 @@ function App() {
               minHeight: 280,
             }}
           >
-            Content
+            <Button type="primary">Button</Button>
           </Content>
         </Layout>
       </Layout>

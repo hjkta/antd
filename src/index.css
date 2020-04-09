@@ -13,3 +13,12 @@
 .ant-layout {
   min-height: calc(100vh - 64px);
 }
+
+.ant-layout-header {
+  background: #fff;
+  border-bottom: 1px solid #e2e5ed;
+}
+
+.ant-menu-light {
+  border-bottom: 1px solid #e2e5ed;
+}
