@@ -1,0 +1,40 @@
+.logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 28px 16px 0;
+  float: left;
+}
+
+.site-layout-background {
+  background: #fff;
+}
+
+.ant-layout {
+  &-header {
+    background: #fff;
+    border-bottom: 1px solid #e2e5ed;
+  }
+}
+
+.ant-menu-light {
+  border-bottom: 1px solid #e2e5ed;
+}
+
+.ant-menu-horizontal {
+  height: 64px;
+
+  > .ant-menu-item {
+    border-bottom: none;
+    top: 0;
+
+    &:hover {
+      border: none;
+    }
+  }
+}
+
+.ant-card {
+  border-radius: 0.25rem;
+  border-color: #e2e5ed;
+}
