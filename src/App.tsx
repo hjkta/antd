@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import { CCard } from "./ui/components";
 import { Layout, Menu, Breadcrumb, Row, Col, Card } from "antd";
 import {
   UserOutlined,
@@ -17,7 +18,6 @@ function App() {
   return (
     <Layout className={styles.mainLayout}>
       <Header>
-        <div className={styles.logo} />
         <Menu mode="horizontal" defaultSelectedKeys={["1"]}>
           <Menu.Item key="1">nav 1</Menu.Item>
           <Menu.Item key="2">nav 2</Menu.Item>
@@ -166,7 +166,9 @@ function App() {
               </Col>
             </Row>
             <Row>
-              <Col span={16}></Col>
+              <Col span={16}>
+                <CCard>content</CCard>
+              </Col>
               <Col span={8}></Col>
             </Row>
             <Row>
