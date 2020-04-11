@@ -1,12 +1,7 @@
 import React from "react";
 import Header from "../../components/Header";
-import { Layout, Menu, Breadcrumb, Row, Col, Statistic } from "antd";
-import {
-  UserOutlined,
-  LaptopOutlined,
-  NotificationOutlined,
-  LikeOutlined
-} from "@ant-design/icons";
+import { Layout, Menu, Breadcrumb, Row, Col, Statistic, Card } from "antd";
+import { UserOutlined, LaptopOutlined, NotificationOutlined, LikeOutlined } from "@ant-design/icons";
 import styles from "../../App.module.scss";
 
 const { SubMenu } = Menu;
@@ -70,14 +65,16 @@ const Profile: React.FC<IProfileProps> = () => {
             <Breadcrumb.Item>Profile</Breadcrumb.Item>
           </Breadcrumb>
           <Content className={styles.content}>
-            <Row gutter={16}>
-              <Col span={12}>
-                <Statistic title="Feedback" value={1128} prefix={<LikeOutlined />} />
-              </Col>
-              <Col span={12}>
-                <Statistic title="Unmerged" value={93} suffix="/ 100" />
-              </Col>
-            </Row>
+            <Card>
+              <Row gutter={16}>
+                <Col span={12}>
+                  <Statistic title="Feedback" value={1128} prefix={<LikeOutlined />} />
+                </Col>
+                <Col span={12}>
+                  <Statistic title="Unmerged" value={93} suffix="/ 100" />
+                </Col>
+              </Row>
+            </Card>
           </Content>
         </Layout>
       </Layout>
