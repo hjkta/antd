@@ -1,3 +1,3 @@
-import CCard from "./Card";
+import Card from "./Card";
 
-export { CCard };
+export { Card };
