@@ -1,12 +1,12 @@
 import React from "react";
-import { Card } from "antd";
+import { Card as AntCard } from "antd";
 
 type CardProps = {
   children?: React.ReactNode;
 };
 
-const CCard = ({ children, ...props }: CardProps) => {
-  return <Card {...props}>{children}</Card>;
+const Card = ({ children, ...props }: CardProps) => {
+  return <AntCard {...props}>{children}</AntCard>;
 };
 
-export default CCard;
+export default Card;
