@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, useState } from "react";
 import BaseTemplate from "../../ui/templates/BaseTemplate";
 import { Row, Col, Card, PageHeader, Button, Tabs, Calendar, Statistic, Avatar, Typography, Tag } from "antd";
 import {
@@ -28,8 +28,114 @@ const gridStyle: CSSProperties = {
   width: "25%",
 };
 
+const tabList = [
+  {
+    key: "tab1",
+    tab: "Показатели",
+  },
+  {
+    key: "tab2",
+    tab: "Расписание",
+  },
+];
+
+const contentList = {
+  tab1: (
+    <Row gutter={[24, 16]}>
+      <Col span={24}>
+        <Card>
+          <Row>
+            <Col span={12}>
+              <Statistic title="Feedback" value={1128} prefix={<LikeOutlined />} />
+            </Col>
+            <Col span={12}>
+              <Statistic title="Unmerged" value={93} suffix="/ 100" />
+            </Col>
+          </Row>
+        </Card>
+      </Col>
+      <Col span={24}>
+        <Card>
+          <Card.Grid style={gridStyle}>
+            <Statistic
+              title="Active"
+              value={11.28}
+              precision={2}
+              valueStyle={{ color: "#3f8600" }}
+              prefix={<ArrowUpOutlined />}
+              suffix="%"
+            />
+          </Card.Grid>
+          <Card.Grid style={gridStyle}>
+            <Statistic
+              title="Active"
+              value={11.28}
+              precision={2}
+              valueStyle={{ color: "#3f8600" }}
+              prefix={<ArrowUpOutlined />}
+              suffix="%"
+            />
+          </Card.Grid>
+          <Card.Grid style={gridStyle}>
+            <Statistic
+              title="Active"
+              value={11.28}
+              precision={2}
+              valueStyle={{ color: "#3f8600" }}
+              prefix={<ArrowUpOutlined />}
+              suffix="%"
+            />
+          </Card.Grid>
+          <Card.Grid style={gridStyle}>
+            <Statistic
+              title="Idle"
+              value={9.3}
+              precision={2}
+              valueStyle={{ color: "#cf1322" }}
+              prefix={<ArrowDownOutlined />}
+              suffix="%"
+            />
+          </Card.Grid>
+          <Card.Grid style={gridStyle}>
+            <Statistic
+              title="Idle"
+              value={9.3}
+              precision={2}
+              valueStyle={{ color: "#cf1322" }}
+              prefix={<ArrowDownOutlined />}
+              suffix="%"
+            />
+          </Card.Grid>
+          <Card.Grid style={gridStyle}>
+            <Statistic
+              title="Idle"
+              value={9.3}
+              precision={2}
+              valueStyle={{ color: "#cf1322" }}
+              prefix={<ArrowDownOutlined />}
+              suffix="%"
+            />
+          </Card.Grid>
+          <Card.Grid style={gridStyle}>
+            <Statistic
+              title="Idle"
+              value={9.3}
+              precision={2}
+              valueStyle={{ color: "#cf1322" }}
+              prefix={<ArrowDownOutlined />}
+              suffix="%"
+            />
+          </Card.Grid>
+        </Card>
+      </Col>
+    </Row>
+  ),
+  tab2: <Calendar />,
+};
+
 interface IProfileProps {}
 const Profile: React.FC<IProfileProps> = () => {
+  const [activeTab, setActiveTab] = useState("tab1");
   return (
     <BaseTemplate>
       <PageHeader
@@ -44,7 +150,20 @@ const Profile: React.FC<IProfileProps> = () => {
             Отправить
           </Button>,
         ]}
-      ></PageHeader>
+      >
+        <Row>
+          <Statistic title="Status" value="Pending" />
+          <Statistic
+            title="Price"
+            prefix="$"
+            value={568.08}
+            style={{
+              margin: "0 32px",
+            }}
+          />
+          <Statistic title="Balance" prefix="$" value={3345.08} />
+        </Row>
+      </PageHeader>
 
       <Row gutter={24}>
         <Col span={6}>
@@ -81,223 +200,18 @@ const Profile: React.FC<IProfileProps> = () => {
           </Card>
         </Col>
         <Col span={18}>
-          <Card bordered={false}>
-            <Tabs defaultActiveKey="1">
-              <TabPane tab="Операционные показатели" key="1">
-                <Row gutter={[24, 16]}>
-                  <Col span={24}>
-                    <Card>
-                      <Row>
-                        <Col span={12}>
-                          <Statistic title="Feedback" value={1128} prefix={<LikeOutlined />} />
-                        </Col>
-                        <Col span={12}>
-                          <Statistic title="Unmerged" value={93} suffix="/ 100" />
-                        </Col>
-                      </Row>
-                    </Card>
-                  </Col>
-                  <Col span={24}>
-                    <Card>
-                      <Card.Grid style={gridStyle}>
-                        <Statistic
-                          title="Active"
-                          value={11.28}
-                          precision={2}
-                          valueStyle={{ color: "#3f8600" }}
-                          prefix={<ArrowUpOutlined />}
-                          suffix="%"
-                        />
-                      </Card.Grid>
-                      <Card.Grid style={gridStyle}>
-                        <Statistic
-                          title="Active"
-                          value={11.28}
-                          precision={2}
-                          valueStyle={{ color: "#3f8600" }}
-                          prefix={<ArrowUpOutlined />}
-                          suffix="%"
-                        />
-                      </Card.Grid>
-                      <Card.Grid style={gridStyle}>
-                        <Statistic
-                          title="Active"
-                          value={11.28}
-                          precision={2}
-                          valueStyle={{ color: "#3f8600" }}
-                          prefix={<ArrowUpOutlined />}
-                          suffix="%"
-                        />
-                      </Card.Grid>
-                      <Card.Grid style={gridStyle}>
-                        <Statistic
-                          title="Idle"
-                          value={9.3}
-                          precision={2}
-                          valueStyle={{ color: "#cf1322" }}
-                          prefix={<ArrowDownOutlined />}
-                          suffix="%"
-                        />
-                      </Card.Grid>
-                      <Card.Grid style={gridStyle}>
-                        <Statistic
-                          title="Idle"
-                          value={9.3}
-                          precision={2}
-                          valueStyle={{ color: "#cf1322" }}
-                          prefix={<ArrowDownOutlined />}
-                          suffix="%"
-                        />
-                      </Card.Grid>
-                      <Card.Grid style={gridStyle}>
-                        <Statistic
-                          title="Idle"
-                          value={9.3}
-                          precision={2}
-                          valueStyle={{ color: "#cf1322" }}
-                          prefix={<ArrowDownOutlined />}
-                          suffix="%"
-                        />
-                      </Card.Grid>
-                      <Card.Grid style={gridStyle}>
-                        <Statistic
-                          title="Idle"
-                          value={9.3}
-                          precision={2}
-                          valueStyle={{ color: "#cf1322" }}
-                          prefix={<ArrowDownOutlined />}
-                          suffix="%"
-                        />
-                      </Card.Grid>
-                    </Card>
-                  </Col>
-                </Row>
-              </TabPane>
-              <TabPane tab="Расписание" key="2">
-                <Calendar />
-              </TabPane>
-              <TabPane tab="Премии" key="3">
-                Content of Tab Pane 3
-              </TabPane>
-            </Tabs>
+          <Card
+            bordered={false}
+            tabList={tabList}
+            activeTabKey={activeTab}
+            onTabChange={(key) => {
+              setActiveTab(key);
+            }}
+          >
+            {(contentList as any)[activeTab]}
           </Card>
         </Col>
       </Row>
-
-      {/*<Row style={{ marginBottom: 10 }} gutter={10}>
-        <Col span={8}>
-          <Card>
-            <Row gutter={24}>
-              <Col span={12}>
-                <Statistic title="Feedback" value={1128} prefix={<LikeOutlined />} />
-              </Col>
-              <Col span={12}>
-                <Statistic title="Unmerged" value={93} suffix="/ 100" />
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-        <Col span={8}>
-          <Card>
-            <Row gutter={24}>
-              <Col span={12}>
-                <Statistic title="Feedback" value={1128} prefix={<LikeOutlined />} />
-              </Col>
-              <Col span={12}>
-                <Statistic title="Unmerged" value={93} suffix="/ 100" />
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-        <Col span={8}>
-          <Card>
-            <Row gutter={24}>
-              <Col span={12}>
-                <Statistic title="Feedback" value={1128} prefix={<LikeOutlined />} />
-              </Col>
-              <Col span={12}>
-                <Statistic title="Unmerged" value={93} suffix="/ 100" />
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-      </Row>
-      <Row>
-        <Col span={24}>
-          <Card title="Статистика">
-            <Card.Grid style={gridStyle}>
-              <Statistic
-                title="Active"
-                value={11.28}
-                precision={2}
-                valueStyle={{ color: "#3f8600" }}
-                prefix={<ArrowUpOutlined />}
-                suffix="%"
-              />
-            </Card.Grid>
-            <Card.Grid style={gridStyle}>
-              <Statistic
-                title="Active"
-                value={11.28}
-                precision={2}
-                valueStyle={{ color: "#3f8600" }}
-                prefix={<ArrowUpOutlined />}
-                suffix="%"
-              />
-            </Card.Grid>
-            <Card.Grid style={gridStyle}>
-              <Statistic
-                title="Active"
-                value={11.28}
-                precision={2}
-                valueStyle={{ color: "#3f8600" }}
-                prefix={<ArrowUpOutlined />}
-                suffix="%"
-              />
-            </Card.Grid>
-            <Card.Grid style={gridStyle}>
-              <Statistic
-                title="Idle"
-                value={9.3}
-                precision={2}
-                valueStyle={{ color: "#cf1322" }}
-                prefix={<ArrowDownOutlined />}
-                suffix="%"
-              />
-            </Card.Grid>
-            <Card.Grid style={gridStyle}>
-              <Statistic
-                title="Idle"
-                value={9.3}
-                precision={2}
-                valueStyle={{ color: "#cf1322" }}
-                prefix={<ArrowDownOutlined />}
-                suffix="%"
-              />
-            </Card.Grid>
-            <Card.Grid style={gridStyle}>
-              <Statistic
-                title="Idle"
-                value={9.3}
-                precision={2}
-                valueStyle={{ color: "#cf1322" }}
-                prefix={<ArrowDownOutlined />}
-                suffix="%"
-              />
-            </Card.Grid>
-            <Card.Grid style={gridStyle}>
-              <Statistic
-                title="Idle"
-                value={9.3}
-                precision={2}
-                valueStyle={{ color: "#cf1322" }}
-                prefix={<ArrowDownOutlined />}
-                suffix="%"
-              />
-            </Card.Grid>
-          </Card>
-        </Col>
-      </Row>*/}
     </BaseTemplate>
   );
 };
