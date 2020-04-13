@@ -1,6 +1,20 @@
 import React, { CSSProperties, useState } from "react";
 import BaseTemplate from "../../ui/templates/BaseTemplate";
-import { Row, Col, Card, PageHeader, Button, Tabs, Calendar, Statistic, Avatar, Typography, Tag } from "antd";
+import {
+  Row,
+  Col,
+  Card,
+  PageHeader,
+  Button,
+  Tabs,
+  Calendar,
+  Statistic,
+  Avatar,
+  Typography,
+  Tag,
+  Timeline,
+  notification,
+} from "antd";
 import {
   MailOutlined,
   ArrowUpOutlined,
@@ -9,6 +23,7 @@ import {
   EnvironmentOutlined,
   ClusterOutlined,
   MobileOutlined,
+  SmileOutlined,
 } from "@ant-design/icons";
 import styles from "../../App.module.scss";
 
@@ -133,6 +148,13 @@ const contentList = {
   tab2: <Calendar />,
 };
 
+notification.open({
+  message: "Notification Title",
+  description:
+    "This is the content of the notification. This is the content of the notification. This is the content of the notification.",
+  icon: <SmileOutlined style={{ color: "#108ee9" }} />,
+});
+
 interface IProfileProps {}
 const Profile: React.FC<IProfileProps> = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -184,7 +206,7 @@ const Profile: React.FC<IProfileProps> = () => {
               </Col>
             </Row>
 
-            <Row>
+            <Row gutter={[24, 18]}>
               <Col span={24}>
                 <Typography.Paragraph>
                   <ClusterOutlined /> &nbsp; Отдел разработки и эксплуатации инофрмационно технических систем
@@ -195,6 +217,17 @@ const Profile: React.FC<IProfileProps> = () => {
                 <Typography.Paragraph>
                   <MobileOutlined /> &nbsp; Обнинск
                 </Typography.Paragraph>
+              </Col>
+            </Row>
+
+            <Row gutter={[24, 18]}>
+              <Col span={24}>
+                <Timeline>
+                  <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+                  <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
+                  <Timeline.Item>Technical testing 2015-09-01</Timeline.Item>
+                  <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
+                </Timeline>
               </Col>
             </Row>
           </Card>
