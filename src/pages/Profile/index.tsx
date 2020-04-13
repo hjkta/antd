@@ -1,12 +1,12 @@
 import React, { CSSProperties, useState } from "react";
 import BaseTemplate from "../../ui/templates/BaseTemplate";
+import ProfileTable from "./ProfileTable";
 import {
   Row,
   Col,
   Card,
   PageHeader,
   Button,
-  Tabs,
   Calendar,
   Statistic,
   Avatar,
@@ -27,7 +27,6 @@ import {
 } from "@ant-design/icons";
 import styles from "../../App.module.scss";
 
-const { TabPane } = Tabs;
 const routes = [
   {
     path: "index",
@@ -57,18 +56,6 @@ const tabList = [
 const contentList = {
   tab1: (
     <Row gutter={[24, 16]}>
-      <Col span={24}>
-        <Card>
-          <Row>
-            <Col span={12}>
-              <Statistic title="Feedback" value={1128} prefix={<LikeOutlined />} />
-            </Col>
-            <Col span={12}>
-              <Statistic title="Unmerged" value={93} suffix="/ 100" />
-            </Col>
-          </Row>
-        </Card>
-      </Col>
       <Col span={24}>
         <Card>
           <Card.Grid style={gridStyle}>
@@ -173,7 +160,7 @@ const Profile: React.FC<IProfileProps> = () => {
           </Button>,
         ]}
       >
-        <Row>
+        {/*<Row>
           <Statistic title="Status" value="Pending" />
           <Statistic
             title="Price"
@@ -184,10 +171,10 @@ const Profile: React.FC<IProfileProps> = () => {
             }}
           />
           <Statistic title="Balance" prefix="$" value={3345.08} />
-        </Row>
+          </Row>*/}
       </PageHeader>
 
-      <Row gutter={24}>
+      <Row gutter={[24, 18]}>
         <Col span={6}>
           <Card bordered={false}>
             <Row gutter={[24, 18]}>
@@ -215,7 +202,7 @@ const Profile: React.FC<IProfileProps> = () => {
                   <EnvironmentOutlined /> &nbsp; Обнинск
                 </Typography.Paragraph>
                 <Typography.Paragraph>
-                  <MobileOutlined /> &nbsp; Обнинск
+                  <MobileOutlined /> &nbsp; +7 (906) 644-5859
                 </Typography.Paragraph>
               </Col>
             </Row>
@@ -223,26 +210,45 @@ const Profile: React.FC<IProfileProps> = () => {
             <Row gutter={[24, 18]}>
               <Col span={24}>
                 <Timeline>
-                  <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
-                  <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
-                  <Timeline.Item>Technical testing 2015-09-01</Timeline.Item>
-                  <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
+                  <Timeline.Item>Руководитель отдела 2015-09-01</Timeline.Item>
+                  <Timeline.Item>Руководитель группы 2015-09-01</Timeline.Item>
+                  <Timeline.Item>Старший разработчик 2015-09-01</Timeline.Item>
                 </Timeline>
               </Col>
             </Row>
           </Card>
         </Col>
+
         <Col span={18}>
-          <Card
-            bordered={false}
-            tabList={tabList}
-            activeTabKey={activeTab}
-            onTabChange={(key) => {
-              setActiveTab(key);
-            }}
-          >
-            {(contentList as any)[activeTab]}
-          </Card>
+          <Row gutter={[16, 16]}>
+            <Col span={24}>
+              <Row gutter={[24, 8]}>
+                <Col span={12}>
+                  <Card bordered={false} title="Статистика 1">
+                    <ProfileTable />
+                  </Card>
+                </Col>
+                <Col span={12}>
+                  <Card bordered={false} title="Статистика 2">
+                    <ProfileTable />
+                  </Card>
+                </Col>
+              </Row>
+            </Col>
+
+            <Col span={24}>
+              <Card
+                bordered={false}
+                tabList={tabList}
+                activeTabKey={activeTab}
+                onTabChange={(key) => {
+                  setActiveTab(key);
+                }}
+              >
+                {(contentList as any)[activeTab]}
+              </Card>
+            </Col>
+          </Row>
         </Col>
       </Row>
     </BaseTemplate>
