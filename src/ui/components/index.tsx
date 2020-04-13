@@ -1,3 +1,4 @@
 import Card from "./Card";
+import CardInfo from "./CardInfo";
 
-export { Card };
+export { Card, CardInfo };

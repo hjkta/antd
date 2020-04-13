@@ -35,7 +35,15 @@ const data = [
 
 interface ITableProps {}
 const ProfileTable: React.FC<ITableProps> = () => {
-  return <Table columns={columns} dataSource={data} showHeader={false} size="small" pagination={false} />;
+  return (
+    <Table
+      columns={columns}
+      dataSource={data}
+      showHeader={false}
+      size="small"
+      pagination={false}
+    />
+  );
 };
 
 export default ProfileTable;
