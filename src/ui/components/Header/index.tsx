@@ -15,6 +15,9 @@ const Header: React.FC<IHeaderProps> = () => {
         <Menu.Item key="2">
           <Link to="/profile">Профиль</Link>
         </Menu.Item>
+        <Menu.Item key="3">
+          <Link to="/report">Отчет</Link>
+        </Menu.Item>
       </Menu>
     </AntHeader>
   );
