@@ -1,8 +1,16 @@
 import React from "react";
-import Header from "../../components/Header";
+// import Header from "../../components/Header";
 import { Layout, Menu } from "antd";
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from "@ant-design/icons";
+import {
+  UserOutlined,
+  PieChartOutlined,
+  LaptopOutlined,
+  NotificationOutlined,
+  ProfileOutlined,
+  HomeOutlined,
+} from "@ant-design/icons";
 import styles from "../../../App.module.scss";
+import { Link } from "react-router-dom";
 
 const { SubMenu } = Menu;
 const { Sider } = Layout;
@@ -18,10 +26,23 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["1"]}
-          defaultOpenKeys={["sub1"]}
+          //defaultSelectedKeys={["a1"]}
+          //defaultOpenKeys={["sub1"]}
           className={styles.sideMenu}
         >
+          <Menu.Item key="a1">
+            <HomeOutlined />
+            <Link to="/">Главная</Link>
+          </Menu.Item>
+          <Menu.Item key="a2">
+            <ProfileOutlined />
+            <Link to="/profile">Профиль</Link>
+          </Menu.Item>
+          <Menu.Item key="a3">
+            <PieChartOutlined />
+            <Link to="/report">Отчет</Link>
+          </Menu.Item>
+
           <SubMenu
             key="sub1"
             title={
@@ -67,7 +88,7 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
         </Menu>
       </Sider>
       <Layout>
-        <Header />
+        {/*<Header />*/}
         <Layout className={styles.innerLayout}>{children}</Layout>
       </Layout>
     </Layout>

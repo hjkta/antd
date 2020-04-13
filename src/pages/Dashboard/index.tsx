@@ -1,19 +1,39 @@
 import React from "react";
 import classNames from "classnames";
 import BaseTemplate from "../../ui/templates/BaseTemplate";
-import { Layout, Breadcrumb, Row, Col, Card } from "antd";
-import { ArrowUpOutlined, ArrowDownOutlined } from "@ant-design/icons";
+import { Layout, Row, Col, Card, PageHeader, Button } from "antd";
+import { ArrowUpOutlined, ArrowDownOutlined, MailOutlined } from "@ant-design/icons";
 import styles from "../../App.module.scss";
 
 const { Content } = Layout;
+const routes = [
+  {
+    path: "index",
+    breadcrumbName: "Главная",
+  },
+  {
+    path: "dashboard",
+    breadcrumbName: "Дашборд",
+  },
+];
 
 interface IProfileProps {}
 const Dashboard: React.FC<IProfileProps> = () => {
   return (
     <BaseTemplate>
-      <Breadcrumb style={{ margin: "16px 0" }}>
-        <Breadcrumb.Item>Home</Breadcrumb.Item>
-      </Breadcrumb>
+     <PageHeader
+        className={styles["ant-page-header"]}
+        breadcrumb={{ routes }}
+        ghost={false}
+        // onBack={() => window.history.back()}
+        title="Профиль сотрудника"
+        subTitle="Ливнул Остюдов"
+        extra={[
+          <Button icon={<MailOutlined />} key="1">
+            Отправить
+          </Button>,
+        ]}
+      ></PageHeader>
       <Content className={styles.content}>
         <Row gutter={10}>
           <Col span={6}>

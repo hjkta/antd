@@ -16,11 +16,11 @@ const { Content } = Layout;
 const routes = [
   {
     path: "index",
-    breadcrumbName: "Home",
+    breadcrumbName: "Главная",
   },
   {
-    path: "first",
-    breadcrumbName: "Report",
+    path: "report",
+    breadcrumbName: "Отчет",
   },
 ];
 
