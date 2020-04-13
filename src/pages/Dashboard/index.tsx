@@ -21,13 +21,13 @@ interface IProfileProps {}
 const Dashboard: React.FC<IProfileProps> = () => {
   return (
     <BaseTemplate>
-     <PageHeader
+      <PageHeader
         className={styles["ant-page-header"]}
         breadcrumb={{ routes }}
         ghost={false}
         // onBack={() => window.history.back()}
-        title="Профиль сотрудника"
-        subTitle="Ливнул Остюдов"
+        title="Дашборд статистика"
+        // subTitle="Ливнул Остюдов"
         extra={[
           <Button icon={<MailOutlined />} key="1">
             Отправить
@@ -42,12 +42,7 @@ const Dashboard: React.FC<IProfileProps> = () => {
               <div className={styles.card__container}>
                 <h3 className={styles.card__h3}>0.81%</h3>
                 <p className={styles.card__p}>
-                  <span
-                    className={classNames(
-                      styles.card__span,
-                      styles.card__span_success
-                    )}
-                  >
+                  <span className={classNames(styles.card__span, styles.card__span_success)}>
                     1.2%
                     <ArrowUpOutlined />
                   </span>
@@ -62,12 +57,7 @@ const Dashboard: React.FC<IProfileProps> = () => {
               <div className={styles.card__container}>
                 <h3 className={styles.card__h3}>3,137</h3>
                 <p className={styles.card__p}>
-                  <span
-                    className={classNames(
-                      styles.card__span,
-                      styles.card__span_danger
-                    )}
-                  >
+                  <span className={classNames(styles.card__span, styles.card__span_danger)}>
                     0.7%
                     <ArrowDownOutlined />
                   </span>
@@ -82,12 +72,7 @@ const Dashboard: React.FC<IProfileProps> = () => {
               <div className={styles.card__container}>
                 <h3 className={styles.card__h3}>$306.20</h3>
                 <p className={styles.card__p}>
-                  <span
-                    className={classNames(
-                      styles.card__span,
-                      styles.card__span_danger
-                    )}
-                  >
+                  <span className={classNames(styles.card__span, styles.card__span_danger)}>
                     0.3%
                     <ArrowDownOutlined />
                   </span>
@@ -102,12 +87,7 @@ const Dashboard: React.FC<IProfileProps> = () => {
               <div className={styles.card__container}>
                 <h3 className={styles.card__h3}>1,650</h3>
                 <p className={styles.card__p}>
-                  <span
-                    className={classNames(
-                      styles.card__span,
-                      styles.card__span_success
-                    )}
-                  >
+                  <span className={classNames(styles.card__span, styles.card__span_success)}>
                     2.1%
                     <ArrowUpOutlined />
                   </span>
