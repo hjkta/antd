@@ -25,7 +25,6 @@ import {
   MobileOutlined,
   SmileOutlined,
 } from "@ant-design/icons";
-import styles from "../../App.module.scss";
 
 const routes = [
   {
