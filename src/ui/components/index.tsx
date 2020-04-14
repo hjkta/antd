@@ -1,3 +1,4 @@
 import Card from "./Card";
+import PageHeader from "./PageHeader";
 
-export { Card };
+export { Card, PageHeader };

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import BaseTemplate from "ui/templates/BaseTemplate";
+import { PageHeader } from "ui/components";
 import {
   Layout,
   Row,
   Col,
-  PageHeader,
   Button,
   Form,
   Input,
@@ -165,7 +165,6 @@ const Profile: React.FC<IProfileProps> = () => {
   return (
     <BaseTemplate>
       <PageHeader
-        className={styles["ant-page-header"]}
         breadcrumb={{ routes }}
         ghost={false}
         // onBack={() => window.history.back()}

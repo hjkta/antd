@@ -1,7 +1,7 @@
 import React, { CSSProperties, useState } from "react";
 import BaseTemplate from "ui/templates/BaseTemplate";
 import ProfileTable from "./ProfileTable";
-import PageHeader from "ui/components/PageHeader";
+import { PageHeader } from "ui/components";
 import {
   Row,
   Col,
@@ -11,7 +11,6 @@ import {
   Statistic,
   Avatar,
   Typography,
-  // PageHeader,
   Tag,
   Timeline,
   notification,
@@ -149,7 +148,6 @@ const Profile: React.FC<IProfileProps> = () => {
   return (
     <BaseTemplate>
       <PageHeader
-        className={styles["ant-page-header"]}
         breadcrumb={{ routes }}
         ghost={false}
         // onBack={() => window.history.back()}

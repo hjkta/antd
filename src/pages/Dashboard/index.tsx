@@ -1,8 +1,8 @@
 import React from "react";
 import classNames from "classnames";
 import BaseTemplate from "ui/templates/BaseTemplate";
-import { Card } from "ui/components";
-import { Layout, Row, Col, PageHeader, Button } from "antd";
+import { Card, PageHeader } from "ui/components";
+import { Layout, Row, Col, Button } from "antd";
 import {
   ArrowUpOutlined,
   ArrowDownOutlined,
@@ -27,7 +27,6 @@ const Dashboard: React.FC<IProfileProps> = () => {
   return (
     <BaseTemplate>
       <PageHeader
-        className={styles["ant-page-header"]}
         breadcrumb={{ routes }}
         ghost={false}
         // onBack={() => window.history.back()}

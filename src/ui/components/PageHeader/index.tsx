@@ -5,7 +5,7 @@ import styles from "./PageHeader.module.less";
 
 const Header: React.FC<DefaultPageHeaderProps> = ({ children, ...props }) => {
   return (
-    <DefaultPageHeader className={styles["ant-page-header"]} {...props}>
+    <DefaultPageHeader className={styles.header} {...props}>
       {children}
     </DefaultPageHeader>
   );
