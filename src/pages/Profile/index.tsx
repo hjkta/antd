@@ -1,16 +1,17 @@
 import React, { CSSProperties, useState } from "react";
 import BaseTemplate from "ui/templates/BaseTemplate";
 import ProfileTable from "./ProfileTable";
+import PageHeader from "ui/components/PageHeader";
 import {
   Row,
   Col,
   Card,
-  PageHeader,
   Button,
   Calendar,
   Statistic,
   Avatar,
   Typography,
+  // PageHeader,
   Tag,
   Timeline,
   notification,
