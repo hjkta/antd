@@ -1,6 +1,20 @@
 import React, { useState } from "react";
-import BaseTemplate from "../../ui/templates/BaseTemplate";
-import { Layout, Row, Col, PageHeader, Button, Form, Input, Select, Space, Dropdown, Menu, Tag, Table } from "antd";
+import BaseTemplate from "ui/templates/BaseTemplate";
+import {
+  Layout,
+  Row,
+  Col,
+  PageHeader,
+  Button,
+  Form,
+  Input,
+  Select,
+  Space,
+  Dropdown,
+  Menu,
+  Tag,
+  Table,
+} from "antd";
 import {
   MailOutlined,
   DownloadOutlined,
@@ -27,12 +41,20 @@ const routes = [
 const menu = (
   <Menu>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.alipay.com/"
+      >
         1st menu item
       </a>
     </Menu.Item>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://www.taobao.com/"
+      >
         2nd menu item
       </a>
     </Menu.Item>
@@ -191,7 +213,9 @@ const Profile: React.FC<IProfileProps> = () => {
                   placeholder="Выберите тип записи..."
                   optionFilterProp="children"
                   filterOption={(input, option) =>
-                    (option as any).children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    (option as any).children
+                      .toLowerCase()
+                      .indexOf(input.toLowerCase()) >= 0
                   }
                 >
                   <Select.Option value="jack">Jack</Select.Option>
@@ -203,7 +227,11 @@ const Profile: React.FC<IProfileProps> = () => {
             <Col>
               <Form.Item>
                 <Space>
-                  <Button type="primary" htmlType="submit" icon={<SearchOutlined />}>
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    icon={<SearchOutlined />}
+                  >
                     Поиск
                   </Button>
                   <a
@@ -212,14 +240,19 @@ const Profile: React.FC<IProfileProps> = () => {
                       setExpand(!expand);
                     }}
                   >
-                    {expand ? <UpOutlined /> : <DownOutlined />} Расширенный поиск
+                    {expand ? <UpOutlined /> : <DownOutlined />} Расширенный
+                    поиск
                   </a>
                 </Space>
               </Form.Item>
             </Col>
           </Row>
 
-          <Table style={{ width: "100%" }} columns={columns} dataSource={data} />
+          <Table
+            style={{ width: "100%" }}
+            columns={columns}
+            dataSource={data}
+          />
         </Form>
       </Content>
     </BaseTemplate>

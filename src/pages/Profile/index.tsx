@@ -1,5 +1,5 @@
 import React, { CSSProperties, useState } from "react";
-import BaseTemplate from "../../ui/templates/BaseTemplate";
+import BaseTemplate from "ui/templates/BaseTemplate";
 import ProfileTable from "./ProfileTable";
 import {
   Row,
@@ -179,13 +179,20 @@ const Profile: React.FC<IProfileProps> = () => {
           <Card bordered={false}>
             <Row gutter={[24, 18]}>
               <Col span={24} style={{ textAlign: "center" }}>
-                <Avatar size={108} src={"http://themepixels.me/dashforge/1.1/assets/img/img1.png"} />
+                <Avatar
+                  size={108}
+                  src={
+                    "http://themepixels.me/dashforge/1.1/assets/img/img1.png"
+                  }
+                />
               </Col>
               <Col span={24} style={{ textAlign: "center" }}>
                 <Typography.Title level={4} style={{ marginBottom: "0" }}>
                   Плахов Павел
                 </Typography.Title>
-                <Typography.Text type="secondary">Руководитель отдела</Typography.Text>
+                <Typography.Text type="secondary">
+                  Руководитель отдела
+                </Typography.Text>
               </Col>
               <Col span={24}>
                 <Tag color="green">хороший</Tag>
@@ -196,7 +203,8 @@ const Profile: React.FC<IProfileProps> = () => {
             <Row gutter={[24, 18]}>
               <Col span={24}>
                 <Typography.Paragraph>
-                  <ClusterOutlined /> &nbsp; Отдел разработки и эксплуатации инофрмационно технических систем
+                  <ClusterOutlined /> &nbsp; Отдел разработки и эксплуатации
+                  инофрмационно технических систем
                 </Typography.Paragraph>
                 <Typography.Paragraph>
                   <EnvironmentOutlined /> &nbsp; Обнинск

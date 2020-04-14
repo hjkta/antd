@@ -1,13 +1,13 @@
 import React from "react";
 import classNames from "classnames";
-import BaseTemplate from "../../ui/templates/BaseTemplate";
-import { Layout, Row, Col, Card, PageHeader, Button } from "antd";
+import BaseTemplate from "ui/templates/BaseTemplate";
+import { Card } from "ui/components";
+import { Layout, Row, Col, PageHeader, Button } from "antd";
 import {
   ArrowUpOutlined,
   ArrowDownOutlined,
   MailOutlined,
 } from "@ant-design/icons";
-import { CardInfo } from "../../ui/components";
 import styles from "../../App.module.scss";
 
 const { Content } = Layout;
@@ -42,7 +42,7 @@ const Dashboard: React.FC<IProfileProps> = () => {
       <Content className={styles.content}>
         <Row gutter={10}>
           <Col span={6}>
-            <CardInfo>
+            <Card>
               <h6 className={styles.card__h6}>Conversion rate</h6>
               <div className={styles.card__container}>
                 <h3 className={styles.card__h3}>0.81%</h3>
@@ -59,7 +59,7 @@ const Dashboard: React.FC<IProfileProps> = () => {
                   <span className={styles.span}> than last week</span>
                 </p>
               </div>
-            </CardInfo>
+            </Card>
           </Col>
           <Col span={6}>
             <Card>
