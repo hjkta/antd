@@ -7,9 +7,18 @@ import {
   NotificationOutlined,
   ProfileOutlined,
   HomeOutlined,
+  BarChartOutlined,
+  SmileOutlined,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import styles from "./BaseTemplate.module.less";
+
+notification.open({
+  message: "Notification Title",
+  description:
+    "This is the content of the notification. This is the content of the notification. This is the content of the notification.",
+  icon: <SmileOutlined style={{ color: "#108ee9" }} />,
+});
 
 const { SubMenu } = Menu;
 const { Sider } = Layout;
@@ -22,7 +31,7 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
     <Layout className={styles["main-layout"]}>
       <Sider width={200}>
         <div className={styles.logo} />
-        <Menu theme="dark" mode="inline" className={styles["side-menu"]}>
+        <Menu theme="dark" mode="inline">
           <Menu.Item key="a1">
             <HomeOutlined />
             <Link to="/">Главная</Link>
