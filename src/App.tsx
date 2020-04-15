@@ -1,8 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Profile from "pages/Profile";
-import Dashboard from "pages/Dashboard";
-import Report from "pages/Report";
+import { Profile, Dashboard, Report, PersonalSales } from "pages";
 
 function App() {
   return (
