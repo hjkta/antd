@@ -204,27 +204,27 @@ const Dashboard: React.FC<IProfileProps> = () => {
                   <h4 className={styles.h4}>Visit Rankings</h4>
                   <ul className={styles.list}>
                     <li>
-                      <span className={styles.list__item}>Sample Data</span>
+                      <span>Sample Data</span>
                       <span className={styles.list__value}>323,234</span>
                     </li>
                     <li>
-                      <span className={styles.list__item}>Sample Data</span>
+                      <span>Sample Data</span>
                       <span className={styles.list__value}>323,234</span>
                     </li>
                     <li>
-                      <span className={styles.list__item}>Sample Data</span>
+                      <span>Sample Data</span>
                       <span className={styles.list__value}>323,234</span>
                     </li>
                     <li>
-                      <span className={styles.list__item}>Sample Data</span>
+                      <span>Sample Data</span>
                       <span className={styles.list__value}>323,234</span>
                     </li>
                     <li>
-                      <span className={styles.list__item}>Sample Data</span>
+                      <span>Sample Data</span>
                       <span className={styles.list__value}>323,234</span>
                     </li>
                     <li>
-                      <span className={styles.list__item}>Sample Data</span>
+                      <span>Sample Data</span>
                       <span className={styles.list__value}>323,234</span>
                     </li>
                   </ul>
