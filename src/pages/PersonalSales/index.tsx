@@ -276,6 +276,8 @@ const PersonalSales: React.FC<IPersonalSalesProps> = () => {
             <Col span={12}>
               <Card bordered={false} title="Наличный Кредит">
                 <Table
+                  size="small"
+                  showHeader={false}
                   columns={columns}
                   dataSource={data}
                   bordered
@@ -286,6 +288,8 @@ const PersonalSales: React.FC<IPersonalSalesProps> = () => {
             <Col span={12}>
               <Card bordered={false} title="Кредитная карта">
                 <Table
+                  size="small"
+                  showHeader={false}
                   columns={columns}
                   dataSource={data}
                   bordered
@@ -299,6 +303,8 @@ const PersonalSales: React.FC<IPersonalSalesProps> = () => {
             <Col span={12}>
               <Card bordered={false} title="BOX">
                 <Table
+                  size="small"
+                  showHeader={false}
                   columns={columns}
                   dataSource={data}
                   bordered
@@ -309,6 +315,8 @@ const PersonalSales: React.FC<IPersonalSalesProps> = () => {
             <Col span={12}>
               <Card bordered={false} title="Дебетовая карта">
                 <Table
+                  size="small"
+                  showHeader={false}
                   columns={columns}
                   dataSource={data}
                   bordered
