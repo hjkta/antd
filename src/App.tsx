@@ -15,6 +15,9 @@ function App() {
         <Route path="/report" exact={true}>
           <Report />
         </Route>
+        <Route path="/personal_sales" exact={true}>
+          <PersonalSales />
+        </Route>
       </Switch>
     </Router>
   );

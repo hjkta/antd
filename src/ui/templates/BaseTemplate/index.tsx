@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, notification } from "antd";
 import {
   UserOutlined,
   PieChartOutlined,
@@ -44,7 +44,10 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
             <PieChartOutlined />
             <Link to="/report">Отчет</Link>
           </Menu.Item>
-
+          <Menu.Item key="a4">
+            <BarChartOutlined />
+            <Link to="/personal_sales">Личный кабинет</Link>
+          </Menu.Item>
           <SubMenu
             key="sub1"
             title={
