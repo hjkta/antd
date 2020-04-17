@@ -13,19 +13,15 @@ import {
   Typography,
   Tag,
   Timeline,
-  notification,
 } from "antd";
 import {
   MailOutlined,
   ArrowUpOutlined,
   ArrowDownOutlined,
-  LikeOutlined,
   EnvironmentOutlined,
   ClusterOutlined,
   MobileOutlined,
-  SmileOutlined,
 } from "@ant-design/icons";
-import styles from "../../App.module.scss";
 
 const routes = [
   {
@@ -134,13 +130,6 @@ const contentList = {
   ),
   tab2: <Calendar />,
 };
-
-notification.open({
-  message: "Notification Title",
-  description:
-    "This is the content of the notification. This is the content of the notification. This is the content of the notification.",
-  icon: <SmileOutlined style={{ color: "#108ee9" }} />,
-});
 
 interface IProfileProps {}
 const Profile: React.FC<IProfileProps> = () => {

@@ -23,7 +23,7 @@ import {
   DownOutlined,
   EllipsisOutlined,
 } from "@ant-design/icons";
-import styles from "../../App.module.scss";
+import styles from "./Report.module.less";
 
 const { Content } = Layout;
 
