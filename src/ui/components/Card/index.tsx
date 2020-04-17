@@ -1,13 +1,16 @@
 import React from "react";
-import { Card as AntCard } from "antd";
+import { Card as DefaultCard } from "antd";
 import { CardProps as DefaultCardProps } from "antd/lib/card";
 import styles from "./Card.module.less";
 
-const Card: React.FC<DefaultCardProps> = ({ children, ...props }) => {
+type CardProps = DefaultCardProps & {
+  noPadding?: boolean;
+};
+const Card: React.FC<CardProps> = ({ children, noPadding, ...props }) => {
   return (
-    <AntCard className={styles.card} {...props}>
+    <DefaultCard className={noPadding ? styles["card-no-padding"] : styles.card} {...props}>
       {children}
-    </AntCard>
+    </DefaultCard>
   );
 };
 

@@ -14,12 +14,12 @@ import { Link } from "react-router-dom";
 import styles from "./BaseTemplate.module.less";
 import { Header } from "ui/components";
 
-notification.open({
+/*notification.open({
   message: "Notification Title",
   description:
     "This is the content of the notification. This is the content of the notification. This is the content of the notification.",
   icon: <SmileOutlined style={{ color: "#108ee9" }} />,
-});
+});*/
 
 const { SubMenu } = Menu;
 const { Sider } = Layout;
