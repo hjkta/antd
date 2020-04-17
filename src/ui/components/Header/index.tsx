@@ -1,24 +1,28 @@
 import React from "react";
-import { Menu, Layout } from "antd";
-import { Link  } from "react-router-dom";
+import { Layout, Avatar, Space, Popover, Badge } from "antd";
+import { BellOutlined , SettingOutlined} from "@ant-design/icons";
+import styles from "./Header.module.less";
 
 const { Header: AntHeader } = Layout;
 
 interface IHeaderProps {}
 const Header: React.FC<IHeaderProps> = () => {
   return (
-    <AntHeader>
-      <Menu mode="horizontal" defaultSelectedKeys={["1"]}>
-        <Menu.Item key="1">
-          <Link to="/">Главная</Link>
-        </Menu.Item>
-        <Menu.Item key="2">
-          <Link to="/profile">Профиль</Link>
-        </Menu.Item>
-        <Menu.Item key="3">
-          <Link to="/report">Отчет</Link>
-        </Menu.Item>
-      </Menu>
+    <AntHeader className={styles.header}>
+      <div className={styles.userWrapper}>
+        <Space size="middle">
+          <SettingOutlined />
+          <Popover placement="bottom" title={"title"} content={"content"} trigger="click">
+            <Badge count={4} dot>
+              <BellOutlined />
+            </Badge>
+          </Popover>
+          <Space>
+            <Avatar size="small" src="http://themepixels.me/dashforge/1.1/assets/img/img1.png" />
+            <>Злобина О.</>
+          </Space>
+        </Space>
+      </div>
     </AntHeader>
   );
 };

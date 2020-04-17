@@ -1,7 +1,7 @@
 import React, { CSSProperties, useState } from "react";
 import BaseTemplate from "ui/templates/BaseTemplate";
 import ProfileTable from "./ProfileTable";
-import { PageHeader } from "ui/components";
+import { PageHeader, Header } from "ui/components";
 import {
   Row,
   Col,
@@ -142,11 +142,6 @@ const Profile: React.FC<IProfileProps> = () => {
         // onBack={() => window.history.back()}
         title="Профиль сотрудника"
         subTitle="Ливнул Остюдов"
-        extra={[
-          <Button icon={<MailOutlined />} key="1">
-            Отправить
-          </Button>,
-        ]}
       >
         {/*<Row>
           <Statistic title="Status" value="Pending" />

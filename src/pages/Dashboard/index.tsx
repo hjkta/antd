@@ -174,11 +174,6 @@ const Dashboard: React.FC<IProfileProps> = () => {
         breadcrumb={{ routes }}
         ghost={false}
         title="Дашборд статистика"
-        extra={[
-          <Button icon={<MailOutlined />} key="1">
-            Отправить
-          </Button>,
-        ]}
       ></PageHeader>
       <Content className={styles.content}>
         <Row gutter={24}>

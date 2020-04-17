@@ -206,11 +206,6 @@ const PersonalSales: React.FC<IPersonalSalesProps> = () => {
         breadcrumb={{ routes }}
         ghost={false}
         title="Личный кабинет"
-        extra={[
-          <Button icon={<MailOutlined />} key="1">
-            Отправить
-          </Button>,
-        ]}
       />
 
       <Row gutter={[24, 18]}>

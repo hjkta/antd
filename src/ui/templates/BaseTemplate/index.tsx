@@ -12,6 +12,7 @@ import {
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import styles from "./BaseTemplate.module.less";
+import { Header } from "ui/components";
 
 notification.open({
   message: "Notification Title",
@@ -93,6 +94,7 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
         </Menu>
       </Sider>
       <Layout>
+        <Header />
         <Layout className={styles["inner-layout"]}>{children}</Layout>
       </Layout>
     </Layout>
