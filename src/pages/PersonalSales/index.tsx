@@ -210,7 +210,7 @@ const PersonalSales: React.FC<IPersonalSalesProps> = () => {
 
       <Row gutter={[24, 18]}>
         <Col span={6}>
-          <Card className="card-table" bordered={false}>
+          <Card bordered={false}>
             <Row gutter={[24, 18]}>
               <Col span={24} style={{ textAlign: "center" }}>
                 <Avatar
