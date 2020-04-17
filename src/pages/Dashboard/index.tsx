@@ -186,7 +186,7 @@ const Dashboard: React.FC<IProfileProps> = () => {
             <Card bordered={false}>
               <Row gutter={24}>
                 <Col span={18}>
-                  <h4 className={styles.h4}>Sales dashboard monitor</h4>
+                  <h4 className={styles.h4}>Sales dashboard</h4>
                   <Chart
                     height={300}
                     data={data_column}
