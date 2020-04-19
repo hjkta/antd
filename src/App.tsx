@@ -1,6 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Profile, Dashboard, Report, PersonalSales } from "pages";
+import {
+  Profile,
+  Dashboard,
+  Report,
+  PersonalSales,
+  PersonalSales2,
+} from "pages";
 
 function App() {
   return (
@@ -17,6 +23,9 @@ function App() {
         </Route>
         <Route path="/personal_sales" exact={true}>
           <PersonalSales />
+        </Route>
+        <Route path="/personal_sales2" exact={true}>
+          <PersonalSales2 />
         </Route>
       </Switch>
     </Router>
