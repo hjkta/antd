@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Layout, Menu } from "antd";
 import {
   UserOutlined,
@@ -8,6 +8,8 @@ import {
   ProfileOutlined,
   HomeOutlined,
   BarChartOutlined,
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import styles from "./BaseTemplate.module.less";
@@ -21,32 +23,43 @@ interface IBaseTemplateProps {
   children: React.ReactNode;
 }
 const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
+  const [collapsed, setCollapsed] = useState(false);
   return (
     <Layout className={styles["main-layout"]}>
-      <Sider width={250} className={styles.slider}>
+      <Sider width={250} trigger={null} className={styles.slider} collapsible collapsed={collapsed}>
         <img src={logo} className={styles.logo} />
         <Menu mode="inline" className={styles.menu} theme="dark">
           <Menu.Item key="a1">
-            <HomeOutlined />
-            <Link to="/">Главная</Link>
+            <Link to="/">
+              <HomeOutlined />
+              <span>Главная</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="a2">
-            <ProfileOutlined />
-            <Link to="/profile">Профиль</Link>
+            <Link to="/profile">
+              <ProfileOutlined />
+              <span>Профиль</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="a3">
-            <PieChartOutlined />
-            <Link to="/report">Отчет</Link>
+            <Link to="/report">
+              <PieChartOutlined />
+              <span>Отчет</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="a4">
-            <BarChartOutlined />
-            <Link to="/personal_sales">Личный кабинет</Link>
+            <Link to="/personal_sales">
+              <BarChartOutlined />
+              <span>Личный кабинет</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="a5">
-            <BarChartOutlined />
-            <Link to="/personal_sales2">Личный кабинет 2</Link>
+            <Link to="/personal_sales2">
+              <BarChartOutlined />
+              <span>Личный кабинет 2</span>
+            </Link>
           </Menu.Item>
-          <SubMenu
+          {/*<SubMenu
             key="sub1"
             title={
               <span>
@@ -87,11 +100,18 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
             <Menu.Item key="10">option10</Menu.Item>
             <Menu.Item key="11">option11</Menu.Item>
             <Menu.Item key="12">option12</Menu.Item>
-          </SubMenu>
+          </SubMenu>*/}
         </Menu>
       </Sider>
       <Layout>
-        <Header />
+        <Header>
+          {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+            className: "trigger",
+            onClick: () => {
+              setCollapsed(!collapsed);
+            },
+          })}
+        </Header>
         <Layout className={styles["inner-layout"]}>{children}</Layout>
       </Layout>
     </Layout>
