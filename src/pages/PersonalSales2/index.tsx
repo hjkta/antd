@@ -1,7 +1,7 @@
 import React from "react";
 import BaseTemplate from "ui/templates/BaseTemplate";
 import { PageHeader, Card } from "ui/components";
-import { Row, Col, Table, Space } from "antd";
+import { Row, Col, Table } from "antd";
 import { data, columns } from "./table_data";
 import { data as chart_data } from "./graph_data";
 import { ArrowUpOutlined, ArrowDownOutlined } from "@ant-design/icons";
