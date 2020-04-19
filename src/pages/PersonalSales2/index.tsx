@@ -266,8 +266,8 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
           </Row>
         </Col>
         <Col span={24}>
-          <Row gutter={[24, 18]}>
-            <Col span={18}>
+          <Row gutter={[16, 16]}>
+            <Col span={24}>
               <Row gutter={[16, 16]}>
                 <Col span={12}>
                   <Card bordered={false} title="Наличный Кредит" noPadding>
