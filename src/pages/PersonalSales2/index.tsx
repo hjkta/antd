@@ -1,23 +1,7 @@
 import React from "react";
 import BaseTemplate from "ui/templates/BaseTemplate";
 import { PageHeader, Card } from "ui/components";
-import {
-  Row,
-  Col,
-  Button,
-  Avatar,
-  Typography,
-  Timeline,
-  Statistic,
-  Table,
-} from "antd";
-import {
-  MailOutlined,
-  EnvironmentOutlined,
-  ClusterOutlined,
-  MobileOutlined,
-  ClockCircleOutlined,
-} from "@ant-design/icons";
+import { Row, Col, Table } from "antd";
 import { data, columns } from "./table_data";
 import styles from "./PersonalSales.module.less";
 
