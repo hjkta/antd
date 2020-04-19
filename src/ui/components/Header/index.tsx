@@ -5,10 +5,15 @@ import styles from "./Header.module.less";
 
 const { Header: AntHeader } = Layout;
 
-interface IHeaderProps {}
-const Header: React.FC<IHeaderProps> = () => {
+interface IHeaderProps {
+  children?: React.ReactNode
+}
+const Header: React.FC<IHeaderProps> = ({
+  children
+}) => {
   return (
     <AntHeader className={styles.header}>
+      {children}
       <div className={styles.userWrapper}>
         <Space size="large">
           <a href="#">
