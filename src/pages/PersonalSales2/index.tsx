@@ -54,6 +54,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
                   dataSource={data}
                   bordered
                   pagination={false}
+                  className={styles.table}
                 />
               </Card>
             </Col>
@@ -66,6 +67,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
                   dataSource={data}
                   bordered
                   pagination={false}
+                  className={styles.table}
                 />
               </Card>
             </Col>
@@ -81,6 +83,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
                   dataSource={data}
                   bordered
                   pagination={false}
+                  className={styles.table}
                 />
               </Card>
             </Col>
@@ -93,6 +96,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
                   dataSource={data}
                   bordered
                   pagination={false}
+                  className={styles.table}
                 />
               </Card>
             </Col>
