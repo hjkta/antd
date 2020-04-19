@@ -49,7 +49,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
               <Card
                 bordered={false}
                 shadow
-                padding
+                padding={false}
                 className={styles["card-info"]}
               >
                 <div className="head">
