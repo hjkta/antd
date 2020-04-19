@@ -13,6 +13,7 @@ import {
 import { Link } from "react-router-dom";
 import styles from "./BaseTemplate.module.less";
 import { Header } from "ui/components";
+import logo from "../../../assets/img/hcfb-logo.svg";
 
 /*notification.open({
   message: "Notification Title",
@@ -30,9 +31,9 @@ interface IBaseTemplateProps {
 const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
   return (
     <Layout className={styles["main-layout"]}>
-      <Sider width={200}>
-        <div className={styles.logo} />
-        <Menu theme="dark" mode="inline">
+      <Sider width={250} className={styles.slider}>
+        <img src={logo} className={styles.logo} />
+        <Menu mode="inline" className={styles.menu} theme="dark" >
           <Menu.Item key="a1">
             <HomeOutlined />
             <Link to="/">Главная</Link>
