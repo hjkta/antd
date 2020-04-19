@@ -128,7 +128,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
         <Col span={24}>
           <Row gutter={16}>
             <Col span={6}>
-              <Card bordered={false} noPadding className={styles["card-info"]}>
+              <Card bordered={true} noPadding className={styles["card-info"]}>
                 <div className="head">
                   <Row justify="space-between">
                     <Col>
@@ -168,7 +168,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
               </Card>
             </Col>
             <Col span={6}>
-              <Card bordered={false} noPadding className={styles["card-info"]}>
+              <Card bordered={true} noPadding className={styles["card-info"]}>
                 <div className="head">
                   <Row justify="space-between">
                     <Col>
@@ -197,7 +197,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
               </Card>
             </Col>
             <Col span={6}>
-              <Card bordered={false} noPadding className={styles["card-info"]}>
+              <Card bordered={true} noPadding className={styles["card-info"]}>
                 <div className="head">
                   <Row justify="space-between">
                     <Col>
@@ -227,7 +227,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
               </Card>
             </Col>
             <Col span={6}>
-              <Card bordered={false} noPadding className={styles["card-info"]}>
+              <Card bordered={true} noPadding className={styles["card-info"]}>
                 <div className="head">
                   <Row justify="space-between">
                     <Col>
@@ -270,7 +270,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
             <Col span={24}>
               <Row gutter={[16, 16]}>
                 <Col span={12}>
-                  <Card bordered={false} title="Наличный Кредит" noPadding>
+                  <Card bordered={true} title="Наличный Кредит" noPadding>
                     <Table
                       size="small"
                       showHeader={false}
@@ -283,7 +283,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
                   </Card>
                 </Col>
                 <Col span={12}>
-                  <Card bordered={false} title="Кредитная карта" noPadding>
+                  <Card bordered={true} title="Кредитная карта" noPadding>
                     <Table
                       size="small"
                       showHeader={false}
@@ -296,7 +296,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
                   </Card>
                 </Col>
                 <Col span={12}>
-                  <Card bordered={false} title="BOX" noPadding>
+                  <Card bordered={true} title="BOX" noPadding>
                     <Table
                       size="small"
                       showHeader={false}
@@ -309,7 +309,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
                   </Card>
                 </Col>
                 <Col span={12}>
-                  <Card bordered={false} title="Дебетовая карта" noPadding>
+                  <Card bordered={true} title="Дебетовая карта" noPadding>
                     <Table
                       size="small"
                       showHeader={false}
