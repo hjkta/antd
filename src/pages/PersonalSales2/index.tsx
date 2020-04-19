@@ -49,7 +49,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
               <Card
                 bordered={false}
                 shadow
-                noPadding
+                padding
                 className={styles["card-info"]}
               >
                 <div className="head">
@@ -119,7 +119,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
               <Card
                 bordered={false}
                 shadow
-                noPadding
+                padding={false}
                 className={styles["card-info"]}
               >
                 <div className="head">
@@ -154,7 +154,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
               <Card
                 bordered={false}
                 shadow
-                noPadding
+                padding={false}
                 className={styles["card-info"]}
               >
                 <div className="head">
@@ -197,7 +197,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
               <Card
                 bordered={false}
                 shadow
-                noPadding
+                padding={false}
                 className={styles["card-info"]}
               >
                 <div className="head">
@@ -263,7 +263,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
                     bordered={false}
                     shadow
                     title="Наличный Кредит"
-                    noPadding
+                    padding={false}
                   >
                     <Table
                       size="small"
@@ -281,7 +281,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
                     bordered={false}
                     shadow
                     title="Кредитная карта"
-                    noPadding
+                    padding={false}
                   >
                     <Table
                       size="small"
@@ -295,7 +295,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
                   </Card>
                 </Col>
                 <Col span={12}>
-                  <Card bordered={true} shadow title="BOX" noPadding>
+                  <Card bordered={true} shadow title="BOX" padding={false}>
                     <Table
                       size="small"
                       showHeader={false}
@@ -312,7 +312,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
                     bordered={true}
                     shadow
                     title="Дебетовая карта"
-                    noPadding
+                    padding={false}
                   >
                     <Table
                       size="small"

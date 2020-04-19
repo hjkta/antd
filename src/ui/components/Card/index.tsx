@@ -5,20 +5,20 @@ import { CardProps as DefaultCardProps } from "antd/lib/card";
 import styles from "./Card.module.less";
 
 type CardProps = DefaultCardProps & {
-  noPadding?: boolean;
+  padding?: boolean;
   className?: string;
   shadow?: boolean;
 };
 const Card: React.FC<CardProps> = ({
   children,
-  noPadding,
+  padding = true,
   shadow,
   className,
   ...props
 }) => {
   let cn = classNames(className, {
     [styles.card]: true,
-    [styles["card_no-padding"]]: noPadding,
+    [styles["card_no-padding"]]: !padding,
     [styles["card_shadow"]]: shadow,
   });
 
