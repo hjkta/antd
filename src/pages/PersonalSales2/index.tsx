@@ -43,63 +43,6 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
       />
 
       <Row gutter={[24, 18]}>
-        <Col span={6}>
-          <Card bordered={false}>
-            <Row gutter={[24, 18]}>
-              <Col span={24} style={{ textAlign: "center" }}>
-                <Avatar
-                  size={108}
-                  src={
-                    "http://themepixels.me/dashforge/1.1/assets/img/img1.png"
-                  }
-                />
-              </Col>
-              <Col span={24} style={{ textAlign: "center" }}>
-                <Typography.Title level={4} style={{ marginBottom: "0" }}>
-                  Злобина Оксана Александровна
-                </Typography.Title>
-                <Typography.Text type="secondary">
-                  Ведущий менеджер
-                </Typography.Text>
-              </Col>
-            </Row>
-
-            <Row gutter={[24, 18]}>
-              <Col span={24}>
-                <Typography.Paragraph>
-                  <ClusterOutlined /> &nbsp; Отдел пилотных проектов
-                </Typography.Paragraph>
-                <Typography.Paragraph>
-                  <EnvironmentOutlined /> &nbsp; Обнинск
-                </Typography.Paragraph>
-                <Typography.Paragraph>
-                  <MobileOutlined /> &nbsp; +7 (999) 888-77-66
-                </Typography.Paragraph>
-              </Col>
-            </Row>
-
-            <Row gutter={[24, 18]}>
-              <Col span={24}>
-                <Timeline mode="left">
-                  <Timeline.Item label="2015-09-01" color="gray">
-                    Менеджер
-                  </Timeline.Item>
-                  <Timeline.Item label="2015-09-01">
-                    Старший менеджер
-                  </Timeline.Item>
-                  <Timeline.Item
-                    label="2015-09-01"
-                    color="green"
-                    dot={<ClockCircleOutlined style={{ fontSize: "14px" }} />}
-                  >
-                    Ведущий менеджер
-                  </Timeline.Item>
-                </Timeline>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-
         <Col span={18}>
           <Row gutter={16}>
             <Col span={12}>
