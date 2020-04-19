@@ -6,15 +6,21 @@ import styles from "./Card.module.less";
 
 type CardProps = DefaultCardProps & {
   noPadding?: boolean;
+  className?: string;
 };
-const Card: React.FC<CardProps> = ({ children, noPadding, ...props }) => {
-  let className = classNames({
+const Card: React.FC<CardProps> = ({
+  children,
+  noPadding,
+  className,
+  ...props
+}) => {
+  let cn = classNames(className, {
     [styles.card]: true,
     [styles["card_no-padding"]]: noPadding,
   });
 
   return (
-    <DefaultCard className={className} {...props}>
+    <DefaultCard className={cn} {...props}>
       {children}
     </DefaultCard>
   );
