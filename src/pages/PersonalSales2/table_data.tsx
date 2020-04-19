@@ -1,10 +1,5 @@
 import React from "react";
-
-const formatNumber = (val: any) =>
-  Number.parseFloat(val).toLocaleString("ru-RU");
-
-const formatPercent = (val: any) =>
-  Number.parseFloat(val).toLocaleString("ru-RU") + "%";
+import { formatNumber, formatPercent } from "utils";
 
 const columns = [
   {
