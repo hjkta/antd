@@ -210,7 +210,7 @@ const PersonalSales: React.FC<IPersonalSalesProps> = () => {
 
       <Row gutter={[24, 18]}>
         <Col span={6}>
-          <Card bordered={false}>
+          <Card>
             <Row gutter={[24, 18]}>
               <Col span={24} style={{ textAlign: "center" }}>
                 <Avatar
@@ -269,7 +269,7 @@ const PersonalSales: React.FC<IPersonalSalesProps> = () => {
         <Col span={18}>
           <Row gutter={16}>
             <Col span={12}>
-              <Card bordered={false} title="Наличный Кредит" padding={false}>
+              <Card title="Наличный Кредит" padding={false}>
                 <Table
                   size="small"
                   showHeader={false}
@@ -281,7 +281,7 @@ const PersonalSales: React.FC<IPersonalSalesProps> = () => {
               </Card>
             </Col>
             <Col span={12}>
-              <Card bordered={false} title="Кредитная карта" padding={false}>
+              <Card title="Кредитная карта" padding={false}>
                 <Table
                   size="small"
                   showHeader={false}
@@ -296,7 +296,7 @@ const PersonalSales: React.FC<IPersonalSalesProps> = () => {
           <div className={styles.divider} />
           <Row gutter={16}>
             <Col span={12}>
-              <Card bordered={false} title="BOX" padding={false}>
+              <Card title="BOX" padding={false}>
                 <Table
                   size="small"
                   showHeader={false}
@@ -308,7 +308,7 @@ const PersonalSales: React.FC<IPersonalSalesProps> = () => {
               </Card>
             </Col>
             <Col span={12}>
-              <Card bordered={false} title="Дебетовая карта" padding={false}>
+              <Card title="Дебетовая карта" padding={false}>
                 <Table
                   size="small"
                   showHeader={false}
