@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Menu, notification } from "antd";
+import { Layout, Menu } from "antd";
 import {
   UserOutlined,
   PieChartOutlined,
@@ -8,19 +8,11 @@ import {
   ProfileOutlined,
   HomeOutlined,
   BarChartOutlined,
-  SmileOutlined,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import styles from "./BaseTemplate.module.less";
 import { Header } from "ui/components";
 import logo from "assets/img/hcfb-logo.svg";
-
-/*notification.open({
-  message: "Notification Title",
-  description:
-    "This is the content of the notification. This is the content of the notification. This is the content of the notification.",
-  icon: <SmileOutlined style={{ color: "#108ee9" }} />,
-});*/
 
 const { SubMenu } = Menu;
 const { Sider } = Layout;
@@ -33,7 +25,7 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
     <Layout className={styles["main-layout"]}>
       <Sider width={250} className={styles.slider}>
         <img src={logo} className={styles.logo} />
-        <Menu mode="inline" className={styles.menu} theme="dark" >
+        <Menu mode="inline" className={styles.menu} theme="dark">
           <Menu.Item key="a1">
             <HomeOutlined />
             <Link to="/">Главная</Link>
