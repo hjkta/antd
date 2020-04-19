@@ -13,7 +13,7 @@ import {
 import { Link } from "react-router-dom";
 import styles from "./BaseTemplate.module.less";
 import { Header } from "ui/components";
-import logo from "../../../assets/img/hcfb-logo.svg";
+import logo from "assets/img/hcfb-logo.svg";
 
 /*notification.open({
   message: "Notification Title",
