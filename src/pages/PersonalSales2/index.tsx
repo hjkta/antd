@@ -28,7 +28,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
 
       <Row gutter={[24, 18]}>
         <Col span={18}>
-          <Row gutter={16}>
+          <Row gutter={[16, 16]}>
             <Col span={12}>
               <Card bordered={false} title="Наличный Кредит" noPadding>
                 <Table
@@ -55,9 +55,6 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
                 />
               </Card>
             </Col>
-          </Row>
-          <div className={styles.divider} />
-          <Row gutter={16}>
             <Col span={12}>
               <Card bordered={false} title="BOX" noPadding>
                 <Table
