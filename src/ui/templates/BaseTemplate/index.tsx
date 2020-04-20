@@ -14,7 +14,7 @@ import {
 import { Link } from "react-router-dom";
 import styles from "./BaseTemplate.module.less";
 import { Header } from "ui/components";
-import logo from "assets/img/hcfb-logo.svg";
+import logo from "assets/img/hcfb-logo-small.svg";
 
 const { SubMenu } = Menu;
 const { Sider } = Layout;
@@ -26,7 +26,13 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
   return (
     <Layout className={styles["main-layout"]}>
-      <Sider width={250} trigger={null} className={styles.slider} collapsible collapsed={collapsed}>
+      <Sider
+        width={250}
+        trigger={null}
+        className={styles.slider}
+        collapsible
+        collapsed={collapsed}
+      >
         <img src={logo} className={styles.logo} />
         <Menu mode="inline" className={styles.menu} theme="dark">
           <Menu.Item key="a1">
@@ -105,12 +111,15 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
       </Sider>
       <Layout>
         <Header>
-          {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-            className: "trigger",
-            onClick: () => {
-              setCollapsed(!collapsed);
-            },
-          })}
+          {React.createElement(
+            collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
+            {
+              className: "trigger",
+              onClick: () => {
+                setCollapsed(!collapsed);
+              },
+            }
+          )}
         </Header>
         <Layout className={styles["inner-layout"]}>{children}</Layout>
       </Layout>
