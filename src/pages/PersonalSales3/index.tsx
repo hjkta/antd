@@ -28,13 +28,13 @@ const routes = [
     breadcrumbName: "Главная",
   },
   {
-    path: "personal_sales2",
-    breadcrumbName: "Личный кабинет 2",
+    path: "personal_sales3",
+    breadcrumbName: "Личный кабинет 3",
   },
 ];
 
 interface IPersonalSalesProps {}
-const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
+const PersonalSales3: React.FC<IPersonalSalesProps> = () => {
   return (
     <BaseTemplate>
       <PageHeader
@@ -334,4 +334,4 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
   );
 };
 
-export default PersonalSales2;
+export default PersonalSales3;

@@ -6,6 +6,7 @@ import {
   Report,
   PersonalSales,
   PersonalSales2,
+  PersonalSales3
 } from "pages";
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path="/personal_sales2" exact={true}>
           <PersonalSales2 />
+        </Route>
+        <Route path="/personal_sales3" exact={true}>
+          <PersonalSales3 />
         </Route>
       </Switch>
     </Router>
