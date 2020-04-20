@@ -14,7 +14,7 @@ import {
 import { Link } from "react-router-dom";
 import styles from "./BaseTemplate.module.less";
 import { Header } from "ui/components";
-import logo from "assets/img/hcfb-logo-small.svg";
+import logo from "assets/img/hcfb-logo.svg";
 
 const { SubMenu } = Menu;
 const { Sider } = Layout;
