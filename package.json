@@ -16,7 +16,6 @@
     "@types/recharts": "^1.8.9",
     "antd": "^4.1.4",
     "babel-plugin-import": "^1.13.0",
-    "bizcharts": "^3.5.8",
     "classnames": "^2.2.6",
     "customize-cra": "^1.0.0-alpha.0",
     "less": "^3.11.1",
