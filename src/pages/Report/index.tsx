@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactDom from "react";
 import BaseTemplate from "ui/templates/BaseTemplate";
 import { PageHeader } from "ui/components";
 import {
@@ -6,6 +7,7 @@ import {
   Row,
   Col,
   Button,
+  DatePicker,
   Form,
   Input,
   Select,
@@ -24,6 +26,7 @@ import {
   EllipsisOutlined,
 } from "@ant-design/icons";
 import styles from "./Report.module.less";
+import moment from "moment";
 
 const { Content } = Layout;
 
@@ -236,6 +239,11 @@ const data = [
   }
 ];
 
+
+const { RangePicker } = DatePicker;
+
+
+
 interface IProfileProps {}
 const Profile: React.FC<IProfileProps> = () => {
   const [expand, setExpand] = useState(false);
@@ -253,17 +261,22 @@ const Profile: React.FC<IProfileProps> = () => {
           </Button>,
         ]}
       ></PageHeader>
-
       <Content className={styles.content}>
         <Form>
           <Row gutter={24}>
+
+            <Col>
+            <RangePicker 
+            defaultValue={[moment('2020-04-01'), moment('2020-04-30')]}
+            
+            />
+            </Col>
             <Col key={1}>
               <Form.Item
                 name={`field-2`}
                 label={`Сотрудник`}
                 rules={[
                   {
-                    required: true,
                     message: "Выберите фио...",
                   },
                 ]}
@@ -279,9 +292,9 @@ const Profile: React.FC<IProfileProps> = () => {
                       .indexOf(input.toLowerCase()) >= 0
                   }
                 >
-                  <Select.Option value="jack">Думкина Елена Анатольевна</Select.Option>
-                  <Select.Option value="lucy">Коваленков Михаил Вениаминович</Select.Option>
-                  <Select.Option value="tom">Злобина Оксана Александровна</Select.Option>
+                  <Select.Option value="Думкина Елена Анатольевна">Думкина Елена Анатольевна</Select.Option>
+                  <Select.Option value="Коваленков Михаил Вениаминович">Коваленков Михаил Вениаминович</Select.Option>
+                  <Select.Option value="Злобина Оксана Александровна">Злобина Оксана Александровна</Select.Option>
                 </Select>
               </Form.Item>
             </Col>
