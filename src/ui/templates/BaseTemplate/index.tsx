@@ -15,8 +15,8 @@ import { Link } from "react-router-dom";
 import styles from "./BaseTemplate.module.less";
 import { Header } from "ui/components";
 import logo from "assets/img/hcfb-logo.svg";
+import logoSm from "assets/img/hcfb-logo-small.svg";
 
-const { SubMenu } = Menu;
 const { Sider } = Layout;
 
 interface IBaseTemplateProps {
@@ -33,7 +33,7 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
         collapsible
         collapsed={collapsed}
       >
-        <img src={logo} className={styles.logo} />
+        <img src={collapsed ? logoSm : logo} className={styles.logo} />
         <Menu mode="inline" className={styles.menu} theme="dark">
           <Menu.Item key="a1">
             <Link to="/">
