@@ -88,75 +88,152 @@ const DropdownMenu = () => {
 
 const columns = [
   {
-    title: "Name",
-    dataIndex: "name",
-    key: "name",
-    render: (text: string) => <a>{text}</a>,
+    title: "Договор",
+    dataIndex: "evidSrv",
+    key: "evidSrv",
+    sorter: (a:any, b:any) => a.evidSrv - b.evidSrv,
+    render: (text: string) => <a>{text}</a>
   },
   {
-    title: "Age",
-    dataIndex: "age",
-    key: "age",
+    title: "Дата подписания",
+    dataIndex: "dateSign",
+    key: "dateSign"
   },
   {
-    title: "Address",
-    dataIndex: "address",
-    key: "address",
+    title: "Сотрудник",
+    dataIndex: "employee",
+    key: "employee",
+    sorter: (a:any, b:any) => a.employee - b.employee,
   },
   {
-    title: "Tags",
-    key: "tags",
-    dataIndex: "tags",
-    render: (tags: any) => (
-      <span>
-        {tags.map((tag: any) => {
-          let color = tag.length > 5 ? "geekblue" : "green";
-          if (tag === "loser") {
-            color = "volcano";
-          }
-          return (
-            <Tag color={color} key={tag}>
-              {tag.toUpperCase()}
-            </Tag>
-          );
-        })}
-      </span>
-    ),
-  },
-  {
-    title: "Action",
-    key: "action",
-    render: (text: string, record: any) => (
-      <span>
-        <a style={{ marginRight: 16 }}>Invite {record.name}</a>
-        <a>Delete</a>
-      </span>
-    ),
+    title: "Лидер",
+    dataIndex: "leader",
+    key: "leader",
+    sorter: (a:any, b:any) => a.leader - b.leader
   },
 ];
 
 const data = [
   {
     key: "1",
-    name: "John Brown",
-    age: 32,
-    address: "New York No. 1 Lake Park",
-    tags: ["nice", "developer"],
+    evidSrv:"2334457852",
+    dateSign:"13.04.2015",
+    employee: "Злобина Оксана Александровна",
+    leader: "Вакуленко Роман Вячеславович",
+    tags: ["nice", "developer"]
   },
   {
     key: "2",
-    name: "Jim Green",
-    age: 42,
-    address: "London No. 1 Lake Park",
-    tags: ["loser"],
+    evidSrv:"2332232852",
+    dateSign:"15.04.2015",
+    employee: "Злобина Оксана Александровна",
+    leader: "Вакуленко Роман Вячеславович",
+    tags: ["nice", "developer"]
   },
   {
     key: "3",
-    name: "Joe Black",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
+    evidSrv:"2334444452",
+    dateSign:"11.03.2015",
+    employee: "Злобина Оксана Александровна",
+    leader: "Вакуленко Роман Вячеславович",
+    tags: ["nice", "developer"]
   },
+  {
+    key: "4",
+    evidSrv:"2124457852",
+    dateSign:"13.04.2015",
+    employee: "Злобина Оксана Александровна",
+    leader: "Вакуленко Роман Вячеславович",
+    tags: ["nice", "developer"]
+  },
+  {
+    key: "5",
+    evidSrv:"2331232852",
+    dateSign:"09.04.2015",
+    employee: "Злобина Оксана Александровна",
+    leader: "Вакуленко Роман Вячеславович",
+    tags: ["nice", "developer"]
+  },
+  {
+    key: "6",
+    evidSrv:"2234257852",
+    dateSign:"11.04.2015",
+    employee: "Злобина Оксана Александровна",
+    leader: "Вакуленко Роман Вячеславович",
+    tags: ["nice", "developer"]
+  },
+  {
+    key: "7",
+    evidSrv:"2345457852",
+    dateSign:"10.04.2015",
+    employee: "Злобина Оксана Александровна",
+    leader: "Вакуленко Роман Вячеславович",
+    tags: ["nice", "developer"]
+  },
+  {
+    key: "8",
+    evidSrv:"2334457852",
+    dateSign:"13.04.2015",
+    employee: "Злобина Оксана Александровна",
+    leader: "Вакуленко Роман Вячеславович",
+    tags: ["nice", "developer"]
+  },
+  {
+    key: "9",
+    evidSrv:"2336547852",
+    dateSign:"15.04.2015",
+    employee: "Злобина Оксана Александровна",
+    leader: "Вакуленко Роман Вячеславович",
+    tags: ["nice", "developer"]
+  },
+  {
+    key: "10",
+    evidSrv:"2323425852",
+    dateSign:"08.04.2015",
+    employee: "Злобина Оксана Александровна",
+    leader: "Вакуленко Роман Вячеславович",
+    tags: ["nice", "developer"]
+  },
+  {
+    key: "11",
+    evidSrv:"2322347852",
+    dateSign:"05.04.2015",
+    employee: "Злобина Оксана Александровна",
+    leader: "Вакуленко Роман Вячеславович",
+    tags: ["nice", "developer"]
+  },
+  {
+    key: "12",
+    evidSrv:"2324347852",
+    dateSign:"07.04.2015",
+    employee: "Злобина Оксана Александровна",
+    leader: "Вакуленко Роман Вячеславович",
+    tags: ["nice", "developer"]
+  },
+  {
+    key: "13",
+    evidSrv:"2322245852",
+    dateSign:"09.04.2015",
+    employee: "Злобина Оксана Александровна",
+    leader: "Вакуленко Роман Вячеславович",
+    tags: ["nice", "developer"]
+  },
+  {
+    key: "14",
+    evidSrv:"2322342252",
+    dateSign:"10.04.2015",
+    employee: "Злобина Оксана Александровна",
+    leader: "Вакуленко Роман Вячеславович",
+    tags: ["nice", "developer"]
+  },
+  {
+    key: "15",
+    evidSrv:"2456547852",
+    dateSign:"05.04.2015",
+    employee: "Злобина Оксана Александровна",
+    leader: "Вакуленко Роман Вячеславович",
+    tags: ["nice", "developer"]
+  }
 ];
 
 interface IProfileProps {}
@@ -172,9 +249,8 @@ const Profile: React.FC<IProfileProps> = () => {
         subTitle="Телемаркетинг"
         extra={[
           <Button icon={<MailOutlined />} key="1">
-            Отправить
+            Excel
           </Button>,
-          <DropdownMenu key="more" />,
         ]}
       ></PageHeader>
 
@@ -183,27 +259,12 @@ const Profile: React.FC<IProfileProps> = () => {
           <Row gutter={24}>
             <Col key={1}>
               <Form.Item
-                name={`field-1`}
-                label={`Фио`}
-                rules={[
-                  {
-                    required: true,
-                    message: "Введите ФИО...",
-                  },
-                ]}
-              >
-                <Input placeholder="Введите ФИО..." />
-              </Form.Item>
-            </Col>
-
-            <Col key={2}>
-              <Form.Item
                 name={`field-2`}
-                label={`Тип записи`}
+                label={`Сотрудник`}
                 rules={[
                   {
                     required: true,
-                    message: "Выберите тип записи...",
+                    message: "Выберите фио...",
                   },
                 ]}
               >
@@ -211,38 +272,17 @@ const Profile: React.FC<IProfileProps> = () => {
                   showSearch
                   placeholder="Выберите тип записи..."
                   optionFilterProp="children"
+                  defaultValue="Злобина Оксана Александровна"
                   filterOption={(input, option) =>
                     (option as any).children
                       .toLowerCase()
                       .indexOf(input.toLowerCase()) >= 0
                   }
                 >
-                  <Select.Option value="jack">Jack</Select.Option>
-                  <Select.Option value="lucy">Lucy</Select.Option>
-                  <Select.Option value="tom">Tom</Select.Option>
+                  <Select.Option value="jack">Думкина Елена Анатольевна</Select.Option>
+                  <Select.Option value="lucy">Коваленков Михаил Вениаминович</Select.Option>
+                  <Select.Option value="tom">Злобина Оксана Александровна</Select.Option>
                 </Select>
-              </Form.Item>
-            </Col>
-            <Col>
-              <Form.Item>
-                <Space>
-                  <Button
-                    type="primary"
-                    htmlType="submit"
-                    icon={<SearchOutlined />}
-                  >
-                    Поиск
-                  </Button>
-                  <a
-                    style={{ fontSize: 12 }}
-                    onClick={() => {
-                      setExpand(!expand);
-                    }}
-                  >
-                    {expand ? <UpOutlined /> : <DownOutlined />} Расширенный
-                    поиск
-                  </a>
-                </Space>
               </Form.Item>
             </Col>
           </Row>

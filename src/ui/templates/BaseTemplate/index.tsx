@@ -65,6 +65,12 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
               <span>Личный кабинет 2</span>
             </Link>
           </Menu.Item>
+          <Menu.Item key="a6">
+            <Link to="/personal_sales3">
+              <BarChartOutlined />
+              <span>Личный кабинет 3</span>
+            </Link>
+          </Menu.Item>
           {/*<SubMenu
             key="sub1"
             title={
