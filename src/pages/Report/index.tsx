@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import ReactDom from "react";
+import React from "react";
 import { tableData,columns } from "./table_data";
 import { CSVLink } from "react-csv";
 import BaseTemplate from "ui/templates/BaseTemplate";
@@ -53,7 +52,6 @@ const { RangePicker } = DatePicker;
 
 interface IProfileProps {}
 const Profile: React.FC<IProfileProps> = () => {
-  const [expand, setExpand] = useState(false);
   return (
     <BaseTemplate>
       <PageHeader

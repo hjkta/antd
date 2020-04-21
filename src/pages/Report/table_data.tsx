@@ -129,6 +129,7 @@ const columns = [
     dataIndex: "evidSrv",
     key: "evidSrv",
     sorter: (a:any, b:any) => a.evidSrv - b.evidSrv,
+    showSorterTooltip: false, 
     render: (text: string) => <a>{text}</a>
   },
   {
@@ -141,12 +142,14 @@ const columns = [
     dataIndex: "employee",
     key: "employee",
     sorter: (a:any, b:any) => a.employee - b.employee,
+    showSorterTooltip: false, 
   },
   {
     title: "Лидер",
     dataIndex: "leader",
     key: "leader",
-    sorter: (a:any, b:any) => a.leader - b.leader
+    sorter: (a:any, b:any) => a.leader - b.leader,
+    showSorterTooltip: false, 
   },
 ];
 
