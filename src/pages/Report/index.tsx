@@ -1,5 +1,5 @@
 import React from "react";
-import { tableData,columns } from "./table_data";
+import { tableData,columns } from "./TableData";
 import { CSVLink } from "react-csv";
 import BaseTemplate from "ui/templates/BaseTemplate";
 import { PageHeader } from "ui/components";
@@ -37,7 +37,7 @@ const Flink=()=> {
 
 const { Content } = Layout;
 
-const routes = [
+let routes = [
   {
     path: "index",
     breadcrumbName: "Главная",
@@ -63,47 +63,54 @@ const Profile: React.FC<IProfileProps> = () => {
       ></PageHeader>
       <Content className={styles.content}>
         <Form>
-          <Row gutter={24}>
-            <Col>
-              <Flink />
-            </Col>
-            <Col>
-              <RangePicker defaultValue={[moment('2020-04-01'), moment('2020-04-30')]} />
-            </Col>
-            <Col>
-              <Form.Item
-                name={`field-2`}
-                label={`Сотрудник`}
-                rules={[
-                  {
-                    message: "Выберите фио...",
-                  },
-                ]}
-              >
-                <Select
-                  showSearch
-                  placeholder="Выберите тип записи..."
-                  optionFilterProp="children"
-                  defaultValue="Злобина Оксана Александровна"
-                  filterOption={(input, option) =>
-                    (option as any).children
-                      .toLowerCase()
-                      .indexOf(input.toLowerCase()) >= 0
-                  }
+          <Row justify="space-between" gutter={24}>
+          <Col>
+            <Row>
+              <Col>
+                <Row gutter={24}>
+                <Col>
+                <RangePicker defaultValue={[moment('2020-04-01'), moment('2020-04-30')]} />
+                </Col>
+                <Col>
+                <Form.Item
+                  name={`field-2`}
+                  label={`Сотрудник`}
+                  rules={[
+                    {
+                      message: "Выберите фио...",
+                    },
+                  ]}
                 >
-                  <Select.Option value="Думкина Елена Анатольевна">Думкина Елена Анатольевна</Select.Option>
-                  <Select.Option value="Коваленков Михаил Вениаминович">Коваленков Михаил Вениаминович</Select.Option>
-                  <Select.Option value="Злобина Оксана Александровна">Злобина Оксана Александровна</Select.Option>
-                </Select>
-              </Form.Item>
-            </Col>
-            <Col>
-              <Button type="primary" icon={<SearchOutlined />}>
-                Поиск
-              </Button>
-            </Col>
+                  <Select
+                    showSearch
+                    placeholder="Выберите тип записи..."
+                    optionFilterProp="children"
+                    defaultValue="Злобина Оксана Александровна"
+                    filterOption={(input, option) =>
+                      (option as any).children
+                        .toLowerCase()
+                        .indexOf(input.toLowerCase()) >= 0
+                    }
+                  >
+                    <Select.Option value="Думкина Елена Анатольевна">Думкина Елена Анатольевна</Select.Option>
+                    <Select.Option value="Коваленков Михаил Вениаминович">Коваленков Михаил Вениаминович</Select.Option>
+                    <Select.Option value="Злобина Оксана Александровна">Злобина Оксана Александровна</Select.Option>
+                  </Select>
+                </Form.Item>
+                </Col>
+                <Col>
+                <Button type="primary" icon={<SearchOutlined />}>
+                  Поиск
+                </Button>
+                </Col>
+                </Row>
+              </Col>
+              </Row>
+          </Col>
+          <Col>
+            <Flink />
+          </Col>
           </Row>
-
           <Table style={{ width: "100%" }} columns={columns} dataSource={tableData} />
         </Form>
       </Content>
