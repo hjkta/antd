@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDom from "react";
 import { tableData,columns } from "./table_data";
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink } from "react-csv";
 import BaseTemplate from "ui/templates/BaseTemplate";
 import { PageHeader } from "ui/components";
 import {
@@ -11,37 +11,29 @@ import {
   Button,
   DatePicker,
   Form,
-  Input,
   Select,
-  Space,
-  Dropdown,
-  Menu,
-  Tag,
   Table,
 } from "antd";
 
 import {
-  MailOutlined,
-  DownloadOutlined,
   SearchOutlined,
-  UpOutlined,
-  DownOutlined,
-  EllipsisOutlined,
   FileExcelOutlined
 } from "@ant-design/icons";
 
 import styles from "./Report.module.less";
 import moment from "moment";
 
-const csvData = [
-  [`Договор`, `Дата`, `email`],
-  ["2334457852", "13.04.2015", "Злобина Оксана Александровна"],
-  ["2332232852", "15.04.2015", "Злобина Оксана Александровна"],
-  ["2334444452", "11.04.2015", "Злобина Оксана Александровна"]
-];
+const Flink=()=> {
+  const csvData = [
+    ["Договор","Дата", "email"],
+    ["2334457852", "13.04.2015", "Злобина Оксана Александровна"],
+    ["2332232852", "15.04.2015", "Злобина Оксана Александровна"],
+    ["2334444452", "11.04.2015", "Злобина Оксана Александровна"]
+  ];
 
-const Flink = () => {  
-  return (<CSVLink data={csvData}><Button icon={<FileExcelOutlined />} key="1"></Button></CSVLink> );
+  return (
+    <CSVLink separator={";"} data={csvData}><Button icon={<FileExcelOutlined />} key="1"></Button></CSVLink>
+  );
 }
 
 const { Content } = Layout;
@@ -70,15 +62,17 @@ const Profile: React.FC<IProfileProps> = () => {
         // onBack={() => window.history.back()}
         title="Отчет по продажам"
         subTitle="Телемаркетинг"
-        extra={[ <Flink /> ]}
       ></PageHeader>
       <Content className={styles.content}>
         <Form>
           <Row gutter={24}>
             <Col>
-            <RangePicker defaultValue={[moment('2020-04-01'), moment('2020-04-30')]} />
+              <Flink />
             </Col>
-            <Col key={1}>
+            <Col>
+              <RangePicker defaultValue={[moment('2020-04-01'), moment('2020-04-30')]} />
+            </Col>
+            <Col>
               <Form.Item
                 name={`field-2`}
                 label={`Сотрудник`}
@@ -104,6 +98,11 @@ const Profile: React.FC<IProfileProps> = () => {
                   <Select.Option value="Злобина Оксана Александровна">Злобина Оксана Александровна</Select.Option>
                 </Select>
               </Form.Item>
+            </Col>
+            <Col>
+              <Button type="primary" icon={<SearchOutlined />}>
+                Поиск
+              </Button>
             </Col>
           </Row>
 
