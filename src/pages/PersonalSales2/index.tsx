@@ -57,7 +57,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
       <PageHeader breadcrumb={{ routes }} ghost={false} title="" /> {/* Личный кабинет телемаркетинга */}
       <Row gutter={[16, 16]}>
         <Col span={24}>
-          <Card bordered={false} shadow>
+          <Card bordered={false} bodyStyle={{ padding: "12px 6px 16px 6px" }}>
             <Row>
               <Col span={12}>
                 <div>
@@ -102,7 +102,6 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
               <Col span={3}>
                 <Statistic title="Расписание" value={"55 / 175"} prefix={<ClockCircleTwoTone />} />
                 <Progress percent={27} steps={10} size="small" strokeColor="#1890ff" />
-
               </Col>
             </Row>
           </Card>
