@@ -9,8 +9,15 @@ import {
   PersonalSales3
 } from "pages";
 
+import ruRU from 'antd/es/locale/ru_RU';
+import { ConfigProvider } from "antd";
+import moment from "moment";
+import 'moment/locale/ru';
+moment.locale('ru');
+
 function App() {
   return (
+    <ConfigProvider locale={ruRU}>
     <Router>
       <Switch>
         <Route path="/" exact={true}>
@@ -33,6 +40,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
+    </ConfigProvider>
   );
 }
 

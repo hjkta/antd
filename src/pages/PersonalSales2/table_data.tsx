@@ -1,5 +1,6 @@
 import React from "react";
 import { formatNumber, formatPercent } from "utils";
+import { Link } from "react-router-dom";
 
 const columns = [
   {
@@ -9,7 +10,7 @@ const columns = [
   {
     title: "Значение",
     dataIndex: "value",
-    render: (text: any) => <a>{text}</a>,
+    render: (text: any) => <Link to="/report">{text}</Link>,
   },
 ];
 

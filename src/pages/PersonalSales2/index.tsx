@@ -4,7 +4,16 @@ import { PageHeader, Card } from "ui/components";
 import { Row, Col, Table, Avatar, Typography, Tag, Spin, Statistic, Progress } from "antd";
 import { data, columns } from "./table_data";
 import { data as chart_data } from "./graph_data";
-import { ArrowUpOutlined, ArrowDownOutlined, PlusOutlined, LikeOutlined } from "@ant-design/icons";
+import {
+  ArrowUpOutlined,
+  ArrowDownOutlined,
+  PlusOutlined,
+  LikeOutlined,
+  MobileTwoTone,
+  EnvironmentTwoTone,
+  BankTwoTone,
+  ClockCircleTwoTone,
+} from "@ant-design/icons";
 import { RubleIcon, PercentIcon } from "./custom_icons";
 import { formatNumber, formatCurrency, formatPercent } from "utils";
 import {
@@ -48,9 +57,9 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
       <PageHeader breadcrumb={{ routes }} ghost={false} title="" /> {/* Личный кабинет телемаркетинга */}
       <Row gutter={[16, 16]}>
         <Col span={24}>
-          <Card bordered={false} shadow={false}>
+          <Card bordered={false} bodyStyle={{ padding: "12px 6px 16px 6px" }}>
             <Row>
-              <Col span={15}>
+              <Col span={12}>
                 <div>
                   <div style={{ width: "90px", float: "left" }}>
                     <Avatar size={64} src={"http://themepixels.me/dashforge/1.1/assets/img/img1.png"} />
@@ -77,14 +86,22 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
                   </div>
                 </div>
               </Col>
-              <Col span={3}>
-                <Progress type="circle" percent={30} width={80} />
+              <Col span={3}></Col>
+              <Col span={6}>
+                <div>
+                  <BankTwoTone /> &nbsp; Отдел пилотных проектов
+                </div>
+                <div>
+                  <EnvironmentTwoTone /> &nbsp; Обнинск
+                </div>
+                <div>
+                  <MobileTwoTone /> &nbsp; +7 (999) 888-77-66
+                </div>
               </Col>
+
               <Col span={3}>
-                <Statistic title="Feedback" value={1128} prefix={<LikeOutlined />} />
-              </Col>
-              <Col span={3}>
-                <Statistic title="Feedback" value={1128} prefix={<LikeOutlined />} />
+                <Statistic title="Расписание" value={"55 / 175"} prefix={<ClockCircleTwoTone />} />
+                <Progress percent={27} steps={10} size="small" strokeColor="#1890ff" />
               </Col>
             </Row>
           </Card>
@@ -283,7 +300,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
               </Card>
             </Col>
             <Col span={12}>
-              <Card bordered={true} shadow title="BOX" padding={false}>
+              <Card bordered={false} shadow title="BOX" padding={false}>
                 <Table
                   size="small"
                   showHeader={false}
@@ -296,7 +313,7 @@ const PersonalSales2: React.FC<IPersonalSalesProps> = () => {
               </Card>
             </Col>
             <Col span={12}>
-              <Card bordered={true} shadow title="Дебетовая карта" padding={false}>
+              <Card bordered={false} shadow title="Дебетовая карта" padding={false}>
                 <Table
                   size="small"
                   showHeader={false}
