@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDom from "react";
 import { tableData,columns } from "./table_data";
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink } from "react-csv";
 import BaseTemplate from "ui/templates/BaseTemplate";
 import { PageHeader } from "ui/components";
 import {
@@ -11,30 +11,17 @@ import {
   Button,
   DatePicker,
   Form,
-  Input,
   Select,
-  Space,
-  Dropdown,
-  Menu,
-  Tag,
   Table,
 } from "antd";
 
 import {
-  MailOutlined,
-  DownloadOutlined,
   SearchOutlined,
-  UpOutlined,
-  DownOutlined,
-  EllipsisOutlined,
   FileExcelOutlined
 } from "@ant-design/icons";
 
 import styles from "./Report.module.less";
 import moment from "moment";
-
-
-
 
 const Flink=()=> {
   const csvData = [
