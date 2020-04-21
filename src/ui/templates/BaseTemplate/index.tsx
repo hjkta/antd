@@ -27,7 +27,7 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
   return (
     <Layout className={styles["main-layout"]}>
       <Sider width={250} trigger={null} className={styles.slider} collapsible collapsed={collapsed}>
-        <img src={collapsed ? logoSm : logo} className={styles.logo} />
+        <img src={collapsed ? logoSm : logo} className={styles.logo} alt="" />
         <Menu mode="inline" className={styles.menu} theme="dark">
           <Menu.Item key="a1">
             <Link to="/">
@@ -35,34 +35,22 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
               <span>Главная</span>
             </Link>
           </Menu.Item>
-          <Menu.Item key="a2">
+          {/*<Menu.Item key="a2">
             <Link to="/profile">
               <ProfileOutlined />
               <span>Профиль</span>
             </Link>
-          </Menu.Item>
+          </Menu.Item>*/}
           <Menu.Item key="a3">
             <Link to="/report">
               <PieChartOutlined />
               <span>Отчет</span>
             </Link>
           </Menu.Item>
-          <Menu.Item key="a4">
-            <Link to="/personal_sales">
-              <BarChartOutlined />
-              <span>Личный кабинет</span>
-            </Link>
-          </Menu.Item>
           <Menu.Item key="a5">
             <Link to="/personal_sales2">
               <BarChartOutlined />
-              <span>Личный кабинет 2</span>
-            </Link>
-          </Menu.Item>
-          <Menu.Item key="a6">
-            <Link to="/personal_sales3">
-              <BarChartOutlined />
-              <span>Личный кабинет 3</span>
+              <span>Личный кабинет</span>
             </Link>
           </Menu.Item>
           {/*<SubMenu
