@@ -1,4 +1,6 @@
-const data = [
+import React, { useState } from "react";
+
+const tableData = [
   {
     key: "1",
     evidSrv:"2334457852",
@@ -121,4 +123,31 @@ const data = [
   }
 ];
 
-export { data };
+const columns = [
+  {
+    title: "Договор",
+    dataIndex: "evidSrv",
+    key: "evidSrv",
+    sorter: (a:any, b:any) => a.evidSrv - b.evidSrv,
+    render: (text: string) => <a>{text}</a>
+  },
+  {
+    title: "Дата подписания",
+    dataIndex: "dateSign",
+    key: "dateSign"
+  },
+  {
+    title: "Сотрудник",
+    dataIndex: "employee",
+    key: "employee",
+    sorter: (a:any, b:any) => a.employee - b.employee,
+  },
+  {
+    title: "Лидер",
+    dataIndex: "leader",
+    key: "leader",
+    sorter: (a:any, b:any) => a.leader - b.leader
+  },
+];
+
+export { tableData, columns };

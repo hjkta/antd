@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactDom from "react";
-import { data as report_data } from "./report_data";
+import { tableData,columns } from "./table_data";
 import { CSVLink, CSVDownload } from "react-csv";
 import BaseTemplate from "ui/templates/BaseTemplate";
 import { PageHeader } from "ui/components";
@@ -57,33 +57,6 @@ const routes = [
   },
 ];
 
-const columns = [
-  {
-    title: "Договор",
-    dataIndex: "evidSrv",
-    key: "evidSrv",
-    sorter: (a:any, b:any) => a.evidSrv - b.evidSrv,
-    render: (text: string) => <a>{text}</a>
-  },
-  {
-    title: "Дата подписания",
-    dataIndex: "dateSign",
-    key: "dateSign"
-  },
-  {
-    title: "Сотрудник",
-    dataIndex: "employee",
-    key: "employee",
-    sorter: (a:any, b:any) => a.employee - b.employee,
-  },
-  {
-    title: "Лидер",
-    dataIndex: "leader",
-    key: "leader",
-    sorter: (a:any, b:any) => a.leader - b.leader
-  },
-];
-
 const { RangePicker } = DatePicker;
 
 interface IProfileProps {}
@@ -102,7 +75,6 @@ const Profile: React.FC<IProfileProps> = () => {
       <Content className={styles.content}>
         <Form>
           <Row gutter={24}>
-
             <Col>
             <RangePicker defaultValue={[moment('2020-04-01'), moment('2020-04-30')]} />
             </Col>
@@ -135,11 +107,7 @@ const Profile: React.FC<IProfileProps> = () => {
             </Col>
           </Row>
 
-          <Table
-            style={{ width: "100%" }}
-            columns={columns}
-            dataSource={report_data}
-          />
+          <Table style={{ width: "100%" }} columns={columns} dataSource={tableData} />
         </Form>
       </Content>
     </BaseTemplate>
