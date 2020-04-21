@@ -8,9 +8,12 @@ import {
   PersonalSales2,
   PersonalSales3
 } from "pages";
+import ruRU from 'antd/es/locale/ru_RU';
+import { ConfigProvider } from "antd";
 
 function App() {
   return (
+    <ConfigProvider locale={ruRU}>
     <Router>
       <Switch>
         <Route path="/" exact={true}>
@@ -33,6 +36,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
+    </ConfigProvider>
   );
 }
 
