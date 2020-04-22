@@ -1,0 +1,75 @@
+@import "~antd/es/style/themes/default.less";
+
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.col {
+  min-width: 0;
+  flex: 0 1 100%;
+}
+
+.graph {
+  padding: 0 10px;
+}
+
+.cell-header {
+  padding: 2px 0 2px 14px;
+  font-size: 24px;
+  font-weight: 700;
+  border-bottom: 1px solid #e2e2e2;
+
+  span {
+    font-weight: 400;
+    font-size: 18px;
+  }
+}
+
+.percent {
+  padding-left: 20px;
+  padding-bottom: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 0;
+  font-family: Rubik;
+  white-space: nowrap;
+
+  &_positive {
+    color: @green-8;
+  }
+
+  &_negative {
+    color: @red-8;
+  }
+}
+
+.cash {
+  padding-right: 20px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 0;
+  font-family: Rubik;
+
+  &_positive {
+    color: @green-8;
+  }
+
+  &_negative {
+    color: @red-8;
+  }
+
+  span {
+    font-family: "IBM Plex Sans";
+    line-height: 1;
+    display: block;
+    font-size: 11px;
+    color: fade(@black, 25%);
+  }
+}
