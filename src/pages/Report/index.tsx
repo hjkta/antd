@@ -56,7 +56,6 @@ const Profile: React.FC<IProfileProps> = () => {
       <PageHeader
         breadcrumb={{ routes }}
         ghost={false}
-        // onBack={() => window.history.back()}
         title="Отчет по продажам"
         subTitle="Телемаркетинг"
       ></PageHeader>
