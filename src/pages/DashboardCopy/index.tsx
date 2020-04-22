@@ -5,6 +5,7 @@ import { PageHeader, Card } from "ui/components";
 import { ArrowUpOutlined, ArrowDownOutlined } from "@ant-design/icons";
 import { Row, Col } from "antd";
 import * as Highcharts from "highcharts";
+import Variablepie from "highcharts/modules/variable-pie";
 import HighchartsReact from "highcharts-react-official";
 import AccessibilityModule from "highcharts/modules/accessibility";
 import { formatNumber, formatCurrency, formatPercent } from "utils/format";
@@ -13,6 +14,7 @@ import CommonOptions from "./CommonOptions";
 import CommonPieOptions from "./CommonPieOptions";
 import styles from "./DashboardCopy.module.less";
 
+Variablepie(Highcharts);
 const routes = [
   {
     path: "index",
@@ -27,6 +29,10 @@ const routes = [
 const cashCreatedPieChart: Highcharts.Options = {
   series: [
     {
+      minPointSize: 10,
+      innerSize: "20%",
+      zMin: 0,
+      name: "countries",
       size: "40%",
       data: [
         {
@@ -65,7 +71,7 @@ const cashCreatedPieChart: Highcharts.Options = {
           z: 235.6,
         },
       ],
-      type: "pie",
+      type: "variablepie",
     },
   ],
   ...CommonPieOptions,
