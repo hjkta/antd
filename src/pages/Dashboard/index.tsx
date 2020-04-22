@@ -196,36 +196,6 @@ const Dashboard: React.FC<IProfileProps> = () => {
       <div className={styles.row}>
         <div className={styles.cell}>
           <h4 className={styles["cell-header"]}>
-            Cash <span>approved</span>
-          </h4>
-          <div className={styles.graph}>
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={cash_approved_chart}
-            />
-          </div>
-          <Row justify="space-between">
-            <Col>
-              <p
-                className={classNames(styles.percent, styles.percent_positive)}
-              >
-                <ArrowUpOutlined /> {formatPercent(35)}
-              </p>
-            </Col>
-            <Col>
-              <p className={classNames(styles.cash, styles.cash_positive)}>
-                +{formatCurrency(3600)}
-                <span>
-                  по сравнению с прошлым
-                  <br />
-                  периодом
-                </span>
-              </p>
-            </Col>
-          </Row>
-        </div>
-        <div className={styles.cell}>
-          <h4 className={styles["cell-header"]}>
             Cash <span>created</span>
           </h4>
           <div className={styles.graph}>
@@ -348,37 +318,7 @@ const Dashboard: React.FC<IProfileProps> = () => {
       <div className={styles.row}>
         <div className={styles.cell}>
           <h4 className={styles["cell-header"]}>
-            Card <span>approved</span>
-          </h4>
-          <div className={styles.graph}>
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={card_approved_chart}
-            />
-          </div>
-          <Row justify="space-between">
-            <Col>
-              <p
-                className={classNames(styles.percent, styles.percent_positive)}
-              >
-                <ArrowUpOutlined /> {formatPercent(35)}
-              </p>
-            </Col>
-            <Col>
-              <p className={classNames(styles.cash, styles.cash_positive)}>
-                +{formatCurrency(3600)}
-                <span>
-                  по сравнению с прошлым
-                  <br />
-                  периодом
-                </span>
-              </p>
-            </Col>
-          </Row>
-        </div>
-        <div className={styles.cell}>
-          <h4 className={styles["cell-header"]}>
-            Cash <span>created</span>
+            Card <span>created</span>
           </h4>
           <div className={styles.graph}>
             <HighchartsReact
@@ -408,12 +348,12 @@ const Dashboard: React.FC<IProfileProps> = () => {
         </div>
         <div className={styles.cell}>
           <h4 className={styles["cell-header"]}>
-            Cash <span>full</span>
+            Card <span>full</span>
           </h4>
           <div className={styles.graph}>
             <HighchartsReact
               highcharts={Highcharts}
-              options={cash_full_chart}
+              options={card_full_chart}
             />
           </div>
           <Row justify="space-between">
@@ -438,12 +378,12 @@ const Dashboard: React.FC<IProfileProps> = () => {
         </div>
         <div className={styles.cell}>
           <h4 className={styles["cell-header"]}>
-            Cash <span>quickyes</span>
+            Card <span>quickyes</span>
           </h4>
           <div className={styles.graph}>
             <HighchartsReact
               highcharts={Highcharts}
-              options={cash_quickyes_chart}
+              options={card_quickyes_chart}
             />
           </div>
           <Row justify="space-between">
@@ -468,12 +408,12 @@ const Dashboard: React.FC<IProfileProps> = () => {
         </div>
         <div className={styles.cell}>
           <h4 className={styles["cell-header"]}>
-            Cash <span>signed</span>
+            Card <span>signed</span>
           </h4>
           <div className={styles.graph}>
             <HighchartsReact
               highcharts={Highcharts}
-              options={cash_signed_chart}
+              options={card_signed_chart}
             />
           </div>
           <Row justify="space-between">
