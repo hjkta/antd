@@ -3,7 +3,7 @@ import BaseTemplate from "ui/templates/BaseTemplate";
 import classNames from "classnames";
 import { PageHeader, Card } from "ui/components";
 import { ArrowUpOutlined, ArrowDownOutlined } from "@ant-design/icons";
-import { Row, Col } from "antd";
+import { Row, Col } from "ui/components";
 import * as Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { formatNumber, formatCurrency, formatPercent } from "utils/format";
@@ -193,8 +193,8 @@ const Dashboard: React.FC<IProfileProps> = () => {
         ghost={false}
         title="Воронка продаж"
       />
-      <Row gutter={16} className={styles.row}>
-        <Col className={styles.col}>
+      <Row gutter={[16, 16]} chart={true}>
+        <Col chart={true}>
           <Card padding={false} bordered={false} shadow>
             <h4 className={styles["cell-header"]}>
               Cash <span>created</span>
@@ -232,7 +232,7 @@ const Dashboard: React.FC<IProfileProps> = () => {
             </Row>
           </Card>
         </Col>
-        <Col className={styles.col}>
+        <Col chart={true}>
           <Card padding={false} bordered={false} shadow>
             <h4 className={styles["cell-header"]}>
               Cash <span>full</span>
@@ -270,7 +270,7 @@ const Dashboard: React.FC<IProfileProps> = () => {
             </Row>
           </Card>
         </Col>
-        <Col className={styles.col}>
+        <Col chart={true}>
           <Card padding={false} bordered={false} shadow>
             <h4 className={styles["cell-header"]}>
               Cash <span>quickyes</span>
@@ -308,7 +308,7 @@ const Dashboard: React.FC<IProfileProps> = () => {
             </Row>
           </Card>
         </Col>
-        <Col className={styles.col}>
+        <Col chart={true}>
           <Card padding={false} bordered={false} shadow>
             <h4 className={styles["cell-header"]}>
               Cash <span>signed</span>
@@ -347,8 +347,8 @@ const Dashboard: React.FC<IProfileProps> = () => {
           </Card>
         </Col>
       </Row>
-      <Row gutter={16} className={styles.row}>
-        <Col className={styles.col}>
+      <Row gutter={16} chart={true}>
+        <Col chart={true}>
           <Card padding={false} bordered={false} shadow>
             <h4 className={styles["cell-header"]}>
               Card <span>created</span>
@@ -386,7 +386,7 @@ const Dashboard: React.FC<IProfileProps> = () => {
             </Row>
           </Card>
         </Col>
-        <Col className={styles.col}>
+        <Col chart={true}>
           <Card padding={false} bordered={false} shadow>
             <h4 className={styles["cell-header"]}>
               Card <span>full</span>
@@ -424,7 +424,7 @@ const Dashboard: React.FC<IProfileProps> = () => {
             </Row>
           </Card>
         </Col>
-        <Col className={styles.col}>
+        <Col chart={true}>
           <Card padding={false} bordered={false} shadow>
             <h4 className={styles["cell-header"]}>
               Card <span>quickyes</span>
@@ -462,7 +462,7 @@ const Dashboard: React.FC<IProfileProps> = () => {
             </Row>
           </Card>
         </Col>
-        <Col className={styles.col}>
+        <Col chart={true}>
           <Card padding={false} bordered={false} shadow>
             <h4 className={styles["cell-header"]}>
               Card <span>signed</span>
