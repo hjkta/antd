@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import BaseTemplate from "ui/templates/BaseTemplate";
 import classNames from "classnames";
 import { PageHeader, Card } from "ui/components";
@@ -193,250 +193,314 @@ const Dashboard: React.FC<IProfileProps> = () => {
         ghost={false}
         title="Воронка продаж"
       />
-      <div className={styles.row}>
-        <div className={styles.cell}>
-          <h4 className={styles["cell-header"]}>
-            Cash <span>created</span>
-          </h4>
-          <div className={styles.graph}>
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={cash_created_chart}
-            />
-          </div>
-          <Row justify="space-between">
-            <Col>
-              <p
-                className={classNames(styles.percent, styles.percent_positive)}
-              >
-                <ArrowUpOutlined /> {formatPercent(35)}
-              </p>
-            </Col>
-            <Col>
-              <p className={classNames(styles.cash, styles.cash_positive)}>
-                +{formatCurrency(3600)}
-                <span>
-                  по сравнению с прошлым
-                  <br />
-                  периодом
-                </span>
-              </p>
-            </Col>
-          </Row>
-        </div>
-        <div className={styles.cell}>
-          <h4 className={styles["cell-header"]}>
-            Cash <span>full</span>
-          </h4>
-          <div className={styles.graph}>
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={cash_full_chart}
-            />
-          </div>
-          <Row justify="space-between">
-            <Col>
-              <p
-                className={classNames(styles.percent, styles.percent_positive)}
-              >
-                <ArrowUpOutlined /> {formatPercent(35)}
-              </p>
-            </Col>
-            <Col>
-              <p className={classNames(styles.cash, styles.cash_positive)}>
-                +{formatCurrency(3600)}
-                <span>
-                  по сравнению с прошлым
-                  <br />
-                  периодом
-                </span>
-              </p>
-            </Col>
-          </Row>
-        </div>
-        <div className={styles.cell}>
-          <h4 className={styles["cell-header"]}>
-            Cash <span>quickyes</span>
-          </h4>
-          <div className={styles.graph}>
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={cash_quickyes_chart}
-            />
-          </div>
-          <Row justify="space-between">
-            <Col>
-              <p
-                className={classNames(styles.percent, styles.percent_positive)}
-              >
-                <ArrowUpOutlined /> {formatPercent(35)}
-              </p>
-            </Col>
-            <Col>
-              <p className={classNames(styles.cash, styles.cash_positive)}>
-                +{formatCurrency(3600)}
-                <span>
-                  по сравнению с прошлым
-                  <br />
-                  периодом
-                </span>
-              </p>
-            </Col>
-          </Row>
-        </div>
-        <div className={styles.cell}>
-          <h4 className={styles["cell-header"]}>
-            Cash <span>signed</span>
-          </h4>
-          <div className={styles.graph}>
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={cash_signed_chart}
-            />
-          </div>
-          <Row justify="space-between">
-            <Col>
-              <p
-                className={classNames(styles.percent, styles.percent_positive)}
-              >
-                <ArrowUpOutlined /> {formatPercent(35)}
-              </p>
-            </Col>
-            <Col>
-              <p className={classNames(styles.cash, styles.cash_positive)}>
-                +{formatCurrency(3600)}
-                <span>
-                  по сравнению с прошлым
-                  <br />
-                  периодом
-                </span>
-              </p>
-            </Col>
-          </Row>
-        </div>
-      </div>
-      <div className={styles.row}>
-        <div className={styles.cell}>
-          <h4 className={styles["cell-header"]}>
-            Card <span>created</span>
-          </h4>
-          <div className={styles.graph}>
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={cash_created_chart}
-            />
-          </div>
-          <Row justify="space-between">
-            <Col>
-              <p
-                className={classNames(styles.percent, styles.percent_positive)}
-              >
-                <ArrowUpOutlined /> {formatPercent(35)}
-              </p>
-            </Col>
-            <Col>
-              <p className={classNames(styles.cash, styles.cash_positive)}>
-                +{formatCurrency(3600)}
-                <span>
-                  по сравнению с прошлым
-                  <br />
-                  периодом
-                </span>
-              </p>
-            </Col>
-          </Row>
-        </div>
-        <div className={styles.cell}>
-          <h4 className={styles["cell-header"]}>
-            Card <span>full</span>
-          </h4>
-          <div className={styles.graph}>
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={card_full_chart}
-            />
-          </div>
-          <Row justify="space-between">
-            <Col>
-              <p
-                className={classNames(styles.percent, styles.percent_positive)}
-              >
-                <ArrowUpOutlined /> {formatPercent(35)}
-              </p>
-            </Col>
-            <Col>
-              <p className={classNames(styles.cash, styles.cash_positive)}>
-                +{formatCurrency(3600)}
-                <span>
-                  по сравнению с прошлым
-                  <br />
-                  периодом
-                </span>
-              </p>
-            </Col>
-          </Row>
-        </div>
-        <div className={styles.cell}>
-          <h4 className={styles["cell-header"]}>
-            Card <span>quickyes</span>
-          </h4>
-          <div className={styles.graph}>
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={card_quickyes_chart}
-            />
-          </div>
-          <Row justify="space-between">
-            <Col>
-              <p
-                className={classNames(styles.percent, styles.percent_positive)}
-              >
-                <ArrowUpOutlined /> {formatPercent(35)}
-              </p>
-            </Col>
-            <Col>
-              <p className={classNames(styles.cash, styles.cash_positive)}>
-                +{formatCurrency(3600)}
-                <span>
-                  по сравнению с прошлым
-                  <br />
-                  периодом
-                </span>
-              </p>
-            </Col>
-          </Row>
-        </div>
-        <div className={styles.cell}>
-          <h4 className={styles["cell-header"]}>
-            Card <span>signed</span>
-          </h4>
-          <div className={styles.graph}>
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={card_signed_chart}
-            />
-          </div>
-          <Row justify="space-between">
-            <Col>
-              <p
-                className={classNames(styles.percent, styles.percent_negative)}
-              >
-                <ArrowDownOutlined /> {formatPercent(35)}
-              </p>
-            </Col>
-            <Col>
-              <p className={classNames(styles.cash, styles.cash_negative)}>
-                -{formatCurrency(3600)}
-                <span>
-                  по сравнению с прошлым
-                  <br />
-                  периодом
-                </span>
-              </p>
-            </Col>
-          </Row>
-        </div>
-      </div>
+      <Row gutter={16} className={styles.row}>
+        <Col className={styles.col}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              Cash <span>created</span>
+            </h4>
+            <div className={styles.graph}>
+              <HighchartsReact
+                highcharts={Highcharts}
+                options={cash_created_chart}
+                callback={(chart: any) => {
+                  setTimeout(() => chart.reflow(), 0);
+                }}
+              />
+            </div>
+            <Row justify="space-between">
+              <Col>
+                <p
+                  className={classNames(
+                    styles.percent,
+                    styles.percent_positive
+                  )}
+                >
+                  <ArrowUpOutlined /> {formatPercent(35)}
+                </p>
+              </Col>
+              <Col>
+                <p className={classNames(styles.cash, styles.cash_positive)}>
+                  +{formatCurrency(3600)}
+                  <span>
+                    по сравнению с прошлым
+                    <br />
+                    периодом
+                  </span>
+                </p>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+        <Col className={styles.col}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              Cash <span>full</span>
+            </h4>
+            <div className={styles.graph}>
+              <HighchartsReact
+                highcharts={Highcharts}
+                options={cash_full_chart}
+                callback={(chart: any) => {
+                  setTimeout(() => chart.reflow(), 0);
+                }}
+              />
+            </div>
+            <Row justify="space-between">
+              <Col>
+                <p
+                  className={classNames(
+                    styles.percent,
+                    styles.percent_positive
+                  )}
+                >
+                  <ArrowUpOutlined /> {formatPercent(35)}
+                </p>
+              </Col>
+              <Col>
+                <p className={classNames(styles.cash, styles.cash_positive)}>
+                  +{formatCurrency(3600)}
+                  <span>
+                    по сравнению с прошлым
+                    <br />
+                    периодом
+                  </span>
+                </p>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+        <Col className={styles.col}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              Cash <span>quickyes</span>
+            </h4>
+            <div className={styles.graph}>
+              <HighchartsReact
+                highcharts={Highcharts}
+                options={cash_quickyes_chart}
+                callback={(chart: any) => {
+                  setTimeout(() => chart.reflow(), 0);
+                }}
+              />
+            </div>
+            <Row justify="space-between">
+              <Col>
+                <p
+                  className={classNames(
+                    styles.percent,
+                    styles.percent_positive
+                  )}
+                >
+                  <ArrowUpOutlined /> {formatPercent(35)}
+                </p>
+              </Col>
+              <Col>
+                <p className={classNames(styles.cash, styles.cash_positive)}>
+                  +{formatCurrency(3600)}
+                  <span>
+                    по сравнению с прошлым
+                    <br />
+                    периодом
+                  </span>
+                </p>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+        <Col className={styles.col}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              Cash <span>signed</span>
+            </h4>
+            <div className={styles.graph}>
+              <HighchartsReact
+                highcharts={Highcharts}
+                options={cash_signed_chart}
+                callback={(chart: any) => {
+                  setTimeout(() => chart.reflow(), 0);
+                }}
+              />
+            </div>
+            <Row justify="space-between">
+              <Col>
+                <p
+                  className={classNames(
+                    styles.percent,
+                    styles.percent_positive
+                  )}
+                >
+                  <ArrowUpOutlined /> {formatPercent(35)}
+                </p>
+              </Col>
+              <Col>
+                <p className={classNames(styles.cash, styles.cash_positive)}>
+                  +{formatCurrency(3600)}
+                  <span>
+                    по сравнению с прошлым
+                    <br />
+                    периодом
+                  </span>
+                </p>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+      </Row>
+      <Row gutter={16} className={styles.row}>
+        <Col className={styles.col}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              Card <span>created</span>
+            </h4>
+            <div className={styles.graph}>
+              <HighchartsReact
+                highcharts={Highcharts}
+                options={cash_created_chart}
+                callback={(chart: any) => {
+                  setTimeout(() => chart.reflow(), 0);
+                }}
+              />
+            </div>
+            <Row justify="space-between">
+              <Col>
+                <p
+                  className={classNames(
+                    styles.percent,
+                    styles.percent_positive
+                  )}
+                >
+                  <ArrowUpOutlined /> {formatPercent(35)}
+                </p>
+              </Col>
+              <Col>
+                <p className={classNames(styles.cash, styles.cash_positive)}>
+                  +{formatCurrency(3600)}
+                  <span>
+                    по сравнению с прошлым
+                    <br />
+                    периодом
+                  </span>
+                </p>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+        <Col className={styles.col}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              Card <span>full</span>
+            </h4>
+            <div className={styles.graph}>
+              <HighchartsReact
+                highcharts={Highcharts}
+                options={card_full_chart}
+                callback={(chart: any) => {
+                  setTimeout(() => chart.reflow(), 0);
+                }}
+              />
+            </div>
+            <Row justify="space-between">
+              <Col>
+                <p
+                  className={classNames(
+                    styles.percent,
+                    styles.percent_positive
+                  )}
+                >
+                  <ArrowUpOutlined /> {formatPercent(35)}
+                </p>
+              </Col>
+              <Col>
+                <p className={classNames(styles.cash, styles.cash_positive)}>
+                  +{formatCurrency(3600)}
+                  <span>
+                    по сравнению с прошлым
+                    <br />
+                    периодом
+                  </span>
+                </p>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+        <Col className={styles.col}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              Card <span>quickyes</span>
+            </h4>
+            <div className={styles.graph}>
+              <HighchartsReact
+                highcharts={Highcharts}
+                options={card_quickyes_chart}
+                callback={(chart: any) => {
+                  setTimeout(() => chart.reflow(), 0);
+                }}
+              />
+            </div>
+            <Row justify="space-between">
+              <Col>
+                <p
+                  className={classNames(
+                    styles.percent,
+                    styles.percent_positive
+                  )}
+                >
+                  <ArrowUpOutlined /> {formatPercent(35)}
+                </p>
+              </Col>
+              <Col>
+                <p className={classNames(styles.cash, styles.cash_positive)}>
+                  +{formatCurrency(3600)}
+                  <span>
+                    по сравнению с прошлым
+                    <br />
+                    периодом
+                  </span>
+                </p>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+        <Col className={styles.col}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              Card <span>signed</span>
+            </h4>
+            <div className={styles.graph}>
+              <HighchartsReact
+                highcharts={Highcharts}
+                options={card_signed_chart}
+                callback={(chart: any) => {
+                  setTimeout(() => chart.reflow(), 0);
+                }}
+              />
+            </div>
+            <Row justify="space-between">
+              <Col>
+                <p
+                  className={classNames(
+                    styles.percent,
+                    styles.percent_negative
+                  )}
+                >
+                  <ArrowDownOutlined /> {formatPercent(35)}
+                </p>
+              </Col>
+              <Col>
+                <p className={classNames(styles.cash, styles.cash_negative)}>
+                  -{formatCurrency(3600)}
+                  <span>
+                    по сравнению с прошлым
+                    <br />
+                    периодом
+                  </span>
+                </p>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+      </Row>
     </BaseTemplate>
   );
 };

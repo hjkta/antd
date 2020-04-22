@@ -1,20 +1,18 @@
 @import "~antd/es/style/themes/default.less";
 
 .row {
-  margin: 0 -8px 16px;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 16px;
 
   &:last-child {
     margin-bottom: 0;
   }
 }
 
-.cell {
-  background-color: #fff;
-  margin: 0 8px;
-  display: inline-block;
-  width: calc(25% - 16px);
-  box-shadow: 0 1px 2px rgba(71, 80, 89, 0.15);
-  border-radius: 4px;
+.col {
+  min-width: 0;
+  flex: 0 1 100%;
 }
 
 .graph {
