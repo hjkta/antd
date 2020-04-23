@@ -22,7 +22,7 @@
   padding: 2px 0 2px 14px;
   font-size: 24px;
   font-weight: 700;
-  border-bottom: 1px solid #e2e2e2;
+  /*border-bottom: 1px solid #e2e2e2;*/
 
   span {
     font-weight: 400;
@@ -46,15 +46,20 @@
   &_negative {
     color: @red-8;
   }
+  &_positive_padded {
+    padding-right: 20px;
+    color: @green-8;
+  }
 }
 
 .cash {
   padding-right: 20px;
   padding-bottom: 10px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
   margin-bottom: 0;
   font-family: Rubik;
+  text-align: right;
 
   &_positive {
     color: @green-8;

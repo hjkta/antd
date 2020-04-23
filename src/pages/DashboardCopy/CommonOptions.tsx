@@ -1,4 +1,4 @@
-const common_options: Highcharts.Options = {
+const CommonOptions: Highcharts.Options = {
   title: {
     text: "",
   },
@@ -203,7 +203,6 @@ const common_options: Highcharts.Options = {
     area: {
       color: "#61CDBB",
       fillOpacity: 0.8,
-      lineColor: "#61CDBB",
     },
   },
   exporting: {
@@ -217,4 +216,4 @@ const common_options: Highcharts.Options = {
   },
 };
 
-export default common_options;
+export default CommonOptions;

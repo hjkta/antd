@@ -10,7 +10,9 @@ import HighchartsReact from "highcharts-react-official";
 import AccessibilityModule from "highcharts/modules/accessibility";
 import { formatNumber, formatCurrency, formatPercent } from "utils/format";
 import json from "./json";
+import jsonHours from "./jsonHours";
 import CommonOptions from "./CommonOptions";
+import CommonBarOptions from "./CommonBarOptions";
 import { CommonPieOptions, DefaultPieColors } from "./CommonPieOptions";
 import styles from "./DashboardCopy.module.less";
 
@@ -110,7 +112,7 @@ const cashCreatedPieChart: Highcharts.Options = {
         },
       ],
       minPointSize: 10,
-      innerSize: "50%",
+      innerSize: "30%",
       zMin: 0,
       name: "Оформленные продукты",
       size: "100%",
@@ -118,27 +120,27 @@ const cashCreatedPieChart: Highcharts.Options = {
         {
           name: "ДК",
           y: 15,
-          z: 92.9,
+          z: 30,
         },
         {
           name: "НК",
           y: 13,
-          z: 118.7,
+          z: 26,
         },
         {
           name: "КК",
           y: 14,
-          z: 124.6,
+          z: 28,
         },
         {
           name: "BOX",
           y: 5,
-          z: 214.5,
+          z: 10,
         },
         {
           name: "Страховка",
           y: 3,
-          z: 235.6,
+          z: 6,
         },
       ],
       type: "variablepie",
@@ -147,7 +149,7 @@ const cashCreatedPieChart: Highcharts.Options = {
   ...CommonPieOptions,
 };
 
-const cash_full_chart: Highcharts.Options = {
+const areaChart: Highcharts.Options = {
   series: [
     {
       name: "Договоров",
@@ -177,6 +179,66 @@ const cash_full_chart: Highcharts.Options = {
   ...CommonOptions,
 };
 
+const barChart: Highcharts.Options = {
+  series: [
+    {
+      name: "Договоров",
+      type: "column",
+      data: jsonHours.cashCreated.current,
+      color: {
+        linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+        stops: [
+          [0, "#FF6CAB"], // start
+          [1, "#7366FF"], // end
+        ],
+      },
+    },
+    {
+      name: "7 дней назад",
+      type: "spline",
+      data: jsonHours.cashCreated.old,
+      color: {
+        linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+        stops: [
+          [0, "#FFA62E"], // start
+          [1, "#EA4D2C"], // end
+        ],
+      },
+    },
+  ],
+  ...CommonBarOptions,
+};
+
+const barChartCustom: Highcharts.Options = {
+  series: [
+    {
+      name: "Договоров",
+      type: "column",
+      data: jsonHours.cardCreated.current,
+      color: {
+        linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+        stops: [
+          [0, "#FFA62E"], // start
+          [1, "#EA4D2C"], // end
+        ],
+      },
+    },
+    {
+      name: "7 дней назад",
+      type: "spline",
+      data: jsonHours.cardCreated.old,
+      color: {
+        linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+        stops: [
+          [0, "#FF9482"], // start
+          [1, "#7D77FF"], // end
+        ],
+      },
+    },
+  ],
+  ...CommonBarOptions,
+};
+
 interface IProfileProps {}
 const DashboardCopy: React.FC<IProfileProps> = () => {
   return (
@@ -187,15 +249,38 @@ const DashboardCopy: React.FC<IProfileProps> = () => {
         title="Статистика управления продаж"
       />
       <Row chart={true} gutter={[16, 16]} className={styles.row}>
-        <Col span={6} chart={true} className={styles.col}>
+        <Col span={4} className={styles.col}>
           <Card padding={false} bordered={false} shadow>
             <h4 className={styles["cell-header"]}>
-              <span>Оформленные продукты</span>
+              <span>NPS</span>
+            </h4>
+            <div className={styles["graph-no-stat"]}>
+              <ProgressChart percent={51}></ProgressChart>
+            </div>
+            <Row justify="space-between">
+              <Col></Col>
+              <Col>
+                <p
+                  className={classNames(
+                    styles.percent,
+                    styles.percent_positive_padded
+                  )}
+                >
+                  <ArrowUpOutlined /> {formatPercent(2)}
+                </p>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+        <Col span={10} className={styles.col}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              <span>Quick Yes. Одобренные заявки</span>
             </h4>
             <div className={styles.graph}>
               <HighchartsReact
                 highcharts={Highcharts}
-                options={cashCreatedPieChart}
+                options={barChart}
                 callback={(chart: any) => {
                   setTimeout(() => chart.reflow(), 0);
                 }}
@@ -203,7 +288,7 @@ const DashboardCopy: React.FC<IProfileProps> = () => {
             </div>
           </Card>
         </Col>
-        <Col span={6} className={styles.col}>
+        <Col span={5} className={styles.col}>
           <Card padding={false} bordered={false} shadow>
             <h4 className={styles["cell-header"]}>
               <span>Процент выполнения Cash</span>
@@ -235,7 +320,7 @@ const DashboardCopy: React.FC<IProfileProps> = () => {
             </Row>
           </Card>
         </Col>
-        <Col span={6} className={styles.col}>
+        <Col span={5} className={styles.col}>
           <Card padding={false} bordered={false} shadow>
             <h4 className={styles["cell-header"]}>
               <span>Процент выполнения Card</span>
@@ -263,31 +348,9 @@ const DashboardCopy: React.FC<IProfileProps> = () => {
             </Row>
           </Card>
         </Col>
-        <Col span={6} className={styles.col}>
-          <Card padding={false} bordered={false} shadow>
-            <h4 className={styles["cell-header"]}>
-              <span>NPS</span>
-            </h4>
-            <div className={styles["graph-no-stat"]}>
-              <ProgressChart percent={51}></ProgressChart>
-            </div>
-            <Row justify="space-between">
-              <Col></Col>
-              <Col>
-                <p
-                  className={classNames(
-                    styles.percent,
-                    styles.percent_positive
-                  )}
-                >
-                  <ArrowUpOutlined /> {formatPercent(2)}
-                </p>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
       </Row>
-      <Row gutter={16} className={styles.row}>
+
+      <Row gutter={[16, 16]} className={styles.row}>
         <Col span={24} className={styles.col}>
           <Card padding={false} bordered={false} shadow>
             <h4 className={styles["cell-header"]}>
@@ -296,7 +359,42 @@ const DashboardCopy: React.FC<IProfileProps> = () => {
             <div className={styles.graph}>
               <HighchartsReact
                 highcharts={Highcharts}
-                options={cash_full_chart}
+                options={areaChart}
+                callback={(chart: any) => {
+                  setTimeout(() => chart.reflow(), 0);
+                }}
+              />
+            </div>
+          </Card>
+        </Col>
+      </Row>
+
+      <Row gutter={[16, 16]} className={styles.row}>
+        <Col span={8} chart={true} className={styles.col}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              <span>Оформленные продукты</span>
+            </h4>
+            <div className={styles.graph}>
+              <HighchartsReact
+                highcharts={Highcharts}
+                options={cashCreatedPieChart}
+                callback={(chart: any) => {
+                  setTimeout(() => chart.reflow(), 0);
+                }}
+              />
+            </div>
+          </Card>
+        </Col>
+        <Col span={16} className={styles.col}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              <span>Звонки</span>
+            </h4>
+            <div className={styles.graph}>
+              <HighchartsReact
+                highcharts={Highcharts}
+                options={barChartCustom}
                 callback={(chart: any) => {
                   setTimeout(() => chart.reflow(), 0);
                 }}
