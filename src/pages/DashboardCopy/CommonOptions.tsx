@@ -7,7 +7,6 @@ const common_options: Highcharts.Options = {
     spacingLeft: 5,
     spacingRight: 5,
     spacingTop: 5,
-    height: 240,
   },
   xAxis: [
     {

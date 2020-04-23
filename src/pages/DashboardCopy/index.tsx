@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import BaseTemplate from "ui/templates/BaseTemplate";
 import classNames from "classnames";
-import { PageHeader, Card } from "ui/components";
 import { ArrowUpOutlined, ArrowDownOutlined } from "@ant-design/icons";
-import { Row, Col } from "antd";
+import { Progress } from "antd";
+import { Row, Col, PageHeader, Card } from "ui/components";
 import * as Highcharts from "highcharts";
 import Variablepie from "highcharts/modules/variable-pie";
 import HighchartsReact from "highcharts-react-official";
@@ -11,10 +11,39 @@ import AccessibilityModule from "highcharts/modules/accessibility";
 import { formatNumber, formatCurrency, formatPercent } from "utils/format";
 import json from "./json";
 import CommonOptions from "./CommonOptions";
-import CommonPieOptions from "./CommonPieOptions";
+import { CommonPieOptions, DefaultPieColors } from "./CommonPieOptions";
 import styles from "./DashboardCopy.module.less";
 
+interface percProps {
+  percent?: number;
+  colorFrom?: string;
+  colorTo?: string;
+}
+
+const ProgressChart = ({
+  percent = 90,
+  colorFrom = "#6ac086",
+  colorTo = "#87d068",
+}: percProps) => {
+  return (
+    <Row justify="center" align="middle">
+      <Col>
+        <Progress
+          strokeLinecap="square"
+          type="circle"
+          strokeColor={{
+            "0%": colorFrom,
+            "100%": colorTo,
+          }}
+          percent={percent}
+        />
+      </Col>
+    </Row>
+  );
+};
+
 Variablepie(Highcharts);
+
 const routes = [
   {
     path: "index",
@@ -29,45 +58,86 @@ const routes = [
 const cashCreatedPieChart: Highcharts.Options = {
   series: [
     {
+      colors: [
+        {
+          linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+          stops: [
+            [0, "#FF6CAB"], // start
+            [1, "#7366FF"], // end
+          ],
+        },
+        {
+          linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+          stops: [
+            [0, "#276174"], // start
+            [1, "#63FD88"], // end
+          ],
+        },
+        {
+          linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+          stops: [
+            [0, "#FFA62E"], // start
+            [1, "#EA4D2C"], // end
+          ],
+        },
+        {
+          linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+          stops: [
+            [0, "#6EE2F5"], // start
+            [1, "#6454F0"], // end
+          ],
+        },
+        {
+          linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+          stops: [
+            [0, "#FF9897"], // start
+            [1, "#F650A0"], // end
+          ],
+        },
+        {
+          linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+          stops: [
+            [0, "#F869D5"], // start
+            [1, "#5650DE"], // end
+          ],
+        },
+        {
+          linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+          stops: [
+            [0, "#F00B51"], // start
+            [1, "#7366FF"], // end
+          ],
+        },
+      ],
       minPointSize: 10,
-      innerSize: "20%",
+      innerSize: "50%",
       zMin: 0,
-      name: "countries",
-      size: "40%",
+      name: "Оформленные продукты",
+      size: "100%",
       data: [
         {
-          name: "Spain",
-          y: 505370,
+          name: "ДК",
+          y: 15,
           z: 92.9,
         },
         {
-          name: "France",
-          y: 551500,
+          name: "НК",
+          y: 13,
           z: 118.7,
         },
         {
-          name: "Poland",
-          y: 312685,
+          name: "КК",
+          y: 14,
           z: 124.6,
         },
         {
-          name: "Czech Republic",
-          y: 78867,
-          z: 137.5,
-        },
-        {
-          name: "Italy",
-          y: 301340,
-          z: 201.8,
-        },
-        {
-          name: "Switzerland",
-          y: 41277,
+          name: "BOX",
+          y: 5,
           z: 214.5,
         },
         {
-          name: "Germany",
-          y: 357022,
+          name: "Страховка",
+          y: 3,
           z: 235.6,
         },
       ],
@@ -83,125 +153,25 @@ const cash_full_chart: Highcharts.Options = {
       name: "Договоров",
       type: "area",
       data: json.cash_full.current,
+      color: {
+        linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+        stops: [
+          [0, "#FF6CAB"], // start
+          [1, "#7366FF"], // end
+        ],
+      },
     },
     {
       name: "7 дней назад",
       type: "spline",
       data: json.cash_full.old,
-    },
-  ],
-  ...CommonOptions,
-};
-
-const cash_quickyes_chart: Highcharts.Options = {
-  series: [
-    {
-      name: "Договоров",
-      type: "area",
-      data: json.cash_quickyes.current,
-    },
-    {
-      name: "7 дней назад",
-      type: "spline",
-      data: json.cash_quickyes.old,
-    },
-  ],
-  ...CommonOptions,
-};
-
-const cash_signed_chart: Highcharts.Options = {
-  series: [
-    {
-      name: "Договоров",
-      type: "area",
-      data: json.cash_signed.current,
-    },
-    {
-      name: "7 дней назад",
-      type: "spline",
-      data: json.cash_signed.old,
-    },
-  ],
-  ...CommonOptions,
-};
-
-// card
-
-const card_approved_chart: Highcharts.Options = {
-  series: [
-    {
-      name: "Договоров",
-      type: "area",
-      data: json.card_approved.current,
-    },
-    {
-      name: "7 дней назад",
-      type: "spline",
-      data: json.card_approved.old,
-    },
-  ],
-  ...CommonOptions,
-};
-
-const card_created_chart: Highcharts.Options = {
-  series: [
-    {
-      name: "Договоров",
-      type: "area",
-      data: json.card_created.current,
-    },
-    {
-      name: "7 дней назад",
-      type: "spline",
-      data: json.card_created.old,
-    },
-  ],
-  ...CommonOptions,
-};
-
-const card_full_chart: Highcharts.Options = {
-  series: [
-    {
-      name: "Договоров",
-      type: "area",
-      data: json.card_full.current,
-    },
-    {
-      name: "7 дней назад",
-      type: "spline",
-      data: json.card_full.old,
-    },
-  ],
-  ...CommonOptions,
-};
-
-const card_quickyes_chart: Highcharts.Options = {
-  series: [
-    {
-      name: "Договоров",
-      type: "area",
-      data: json.card_quickyes.current,
-    },
-    {
-      name: "7 дней назад",
-      type: "spline",
-      data: json.card_quickyes.old,
-    },
-  ],
-  ...CommonOptions,
-};
-
-const card_signed_chart: Highcharts.Options = {
-  series: [
-    {
-      name: "Договоров",
-      type: "area",
-      data: json.card_signed.current,
-    },
-    {
-      name: "7 дней назад",
-      type: "spline",
-      data: json.card_signed.old,
+      color: {
+        linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+        stops: [
+          [0, "#FFA62E"], // start
+          [1, "#EA4D2C"], // end
+        ],
+      },
     },
   ],
   ...CommonOptions,
@@ -214,13 +184,13 @@ const DashboardCopy: React.FC<IProfileProps> = () => {
       <PageHeader
         breadcrumb={{ routes }}
         ghost={false}
-        title="Воронка продаж"
+        title="Статистика управления продаж"
       />
-      <Row gutter={16} className={styles.row}>
-        <Col className={styles.col}>
+      <Row chart={true} gutter={[16, 16]} className={styles.row}>
+        <Col span={6} chart={true} className={styles.col}>
           <Card padding={false} bordered={false} shadow>
             <h4 className={styles["cell-header"]}>
-              Cash <span>created</span>
+              <span>Оформленные продукты</span>
             </h4>
             <div className={styles.graph}>
               <HighchartsReact
@@ -231,6 +201,20 @@ const DashboardCopy: React.FC<IProfileProps> = () => {
                 }}
               />
             </div>
+          </Card>
+        </Col>
+        <Col span={6} className={styles.col}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              <span>Процент выполнения Cash</span>
+            </h4>
+            <div className={styles["graph-no-stat"]}>
+              <ProgressChart
+                percent={48}
+                colorFrom={"#fdec6d"}
+                colorTo={"#ff7599"}
+              ></ProgressChart>
+            </div>
             <Row justify="space-between">
               <Col>
                 <p
@@ -239,26 +223,75 @@ const DashboardCopy: React.FC<IProfileProps> = () => {
                     styles.percent_positive
                   )}
                 >
-                  <ArrowUpOutlined /> {formatPercent(35)}
+                  <ArrowUpOutlined /> {formatPercent(2)}
                 </p>
               </Col>
               <Col>
                 <p className={classNames(styles.cash, styles.cash_positive)}>
                   +{formatCurrency(3600)}
-                  <span>
-                    по сравнению с прошлым
-                    <br />
-                    периодом
-                  </span>
+                  <span>за текущую неделю</span>
                 </p>
               </Col>
             </Row>
           </Card>
         </Col>
-        <Col className={styles.col}>
+        <Col span={6} className={styles.col}>
           <Card padding={false} bordered={false} shadow>
             <h4 className={styles["cell-header"]}>
-              Cash <span>full</span>
+              <span>Процент выполнения Card</span>
+            </h4>
+            <div className={styles["graph-no-stat"]}>
+              <ProgressChart percent={93}></ProgressChart>
+            </div>
+            <Row justify="space-between">
+              <Col>
+                <p
+                  className={classNames(
+                    styles.percent,
+                    styles.percent_positive
+                  )}
+                >
+                  <ArrowUpOutlined /> {formatPercent(4)}
+                </p>
+              </Col>
+              <Col>
+                <p className={classNames(styles.cash, styles.cash_positive)}>
+                  +{formatCurrency(3600)}
+                  <span>за текущую неделю</span>
+                </p>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+        <Col span={6} className={styles.col}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              <span>NPS</span>
+            </h4>
+            <div className={styles["graph-no-stat"]}>
+              <ProgressChart percent={51}></ProgressChart>
+            </div>
+            <Row justify="space-between">
+              <Col></Col>
+              <Col>
+                <p
+                  className={classNames(
+                    styles.percent,
+                    styles.percent_positive
+                  )}
+                >
+                  <ArrowUpOutlined /> {formatPercent(2)}
+                </p>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+      </Row>
+      <Row gutter={16} className={styles.row}>
+        <Col span={24} className={styles.col}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              <span>Активность продаж за сегодня</span>
             </h4>
             <div className={styles.graph}>
               <HighchartsReact
@@ -269,144 +302,6 @@ const DashboardCopy: React.FC<IProfileProps> = () => {
                 }}
               />
             </div>
-            <Row justify="space-between">
-              <Col>
-                <p
-                  className={classNames(
-                    styles.percent,
-                    styles.percent_positive
-                  )}
-                >
-                  <ArrowUpOutlined /> {formatPercent(35)}
-                </p>
-              </Col>
-              <Col>
-                <p className={classNames(styles.cash, styles.cash_positive)}>
-                  +{formatCurrency(3600)}
-                  <span>
-                    по сравнению с прошлым
-                    <br />
-                    периодом
-                  </span>
-                </p>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-      </Row>
-      <Row gutter={16} className={styles.row}>
-        <Col className={styles.col}>
-          <Card padding={false} bordered={false} shadow>
-            <h4 className={styles["cell-header"]}>
-              Card <span>full</span>
-            </h4>
-            <div className={styles.graph}>
-              <HighchartsReact
-                highcharts={Highcharts}
-                options={card_full_chart}
-                callback={(chart: any) => {
-                  setTimeout(() => chart.reflow(), 0);
-                }}
-              />
-            </div>
-            <Row justify="space-between">
-              <Col>
-                <p
-                  className={classNames(
-                    styles.percent,
-                    styles.percent_positive
-                  )}
-                >
-                  <ArrowUpOutlined /> {formatPercent(35)}
-                </p>
-              </Col>
-              <Col>
-                <p className={classNames(styles.cash, styles.cash_positive)}>
-                  +{formatCurrency(3600)}
-                  <span>
-                    по сравнению с прошлым
-                    <br />
-                    периодом
-                  </span>
-                </p>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-        <Col className={styles.col}>
-          <Card padding={false} bordered={false} shadow>
-            <h4 className={styles["cell-header"]}>
-              Card <span>quickyes</span>
-            </h4>
-            <div className={styles.graph}>
-              <HighchartsReact
-                highcharts={Highcharts}
-                options={card_quickyes_chart}
-                callback={(chart: any) => {
-                  setTimeout(() => chart.reflow(), 0);
-                }}
-              />
-            </div>
-            <Row justify="space-between">
-              <Col>
-                <p
-                  className={classNames(
-                    styles.percent,
-                    styles.percent_positive
-                  )}
-                >
-                  <ArrowUpOutlined /> {formatPercent(35)}
-                </p>
-              </Col>
-              <Col>
-                <p className={classNames(styles.cash, styles.cash_positive)}>
-                  +{formatCurrency(3600)}
-                  <span>
-                    по сравнению с прошлым
-                    <br />
-                    периодом
-                  </span>
-                </p>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-        <Col className={styles.col}>
-          <Card padding={false} bordered={false} shadow>
-            <h4 className={styles["cell-header"]}>
-              Card <span>signed</span>
-            </h4>
-            <div className={styles.graph}>
-              <HighchartsReact
-                highcharts={Highcharts}
-                options={card_signed_chart}
-                callback={(chart: any) => {
-                  setTimeout(() => chart.reflow(), 0);
-                }}
-              />
-            </div>
-            <Row justify="space-between">
-              <Col>
-                <p
-                  className={classNames(
-                    styles.percent,
-                    styles.percent_negative
-                  )}
-                >
-                  <ArrowDownOutlined /> {formatPercent(35)}
-                </p>
-              </Col>
-              <Col>
-                <p className={classNames(styles.cash, styles.cash_negative)}>
-                  -{formatCurrency(3600)}
-                  <span>
-                    по сравнению с прошлым
-                    <br />
-                    периодом
-                  </span>
-                </p>
-              </Col>
-            </Row>
           </Card>
         </Col>
       </Row>
