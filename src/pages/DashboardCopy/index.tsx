@@ -218,8 +218,8 @@ const barChartCustom: Highcharts.Options = {
       color: {
         linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
         stops: [
-          [0, "#276174"], // start
-          [1, "#63FD88"], // end
+          [0, "#FFA62E"], // start
+          [1, "#EA4D2C"], // end
         ],
       },
     },
