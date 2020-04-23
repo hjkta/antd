@@ -170,8 +170,8 @@ const areaChart: Highcharts.Options = {
       color: {
         linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
         stops: [
-          [0, "#FFA62E"], // start
-          [1, "#EA4D2C"], // end
+          [0, "#222222"], // start
+          [1, "#002984"], // end
         ],
       },
     },
@@ -200,8 +200,8 @@ const barChart: Highcharts.Options = {
       color: {
         linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
         stops: [
-          [0, "#FFA62E"], // start
-          [1, "#EA4D2C"], // end
+          [0, "#222222"], // start
+          [1, "#002984"], // end
         ],
       },
     },
@@ -230,8 +230,8 @@ const barChartCustom: Highcharts.Options = {
       color: {
         linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
         stops: [
-          [0, "#FF9482"], // start
-          [1, "#7D77FF"], // end
+          [0, "#222222"], // start
+          [1, "#002984"], // end
         ],
       },
     },
