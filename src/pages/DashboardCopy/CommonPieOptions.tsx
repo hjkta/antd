@@ -96,4 +96,32 @@ const CommonPieOptions: Highcharts.Options = {
   },
 };
 
-export { CommonPieOptions, DefaultPieColors };
+const pieData = [
+  {
+    name: "ДК",
+    y: 15,
+    z: 30,
+  },
+  {
+    name: "НК",
+    y: 13,
+    z: 26,
+  },
+  {
+    name: "КК",
+    y: 14,
+    z: 28,
+  },
+  {
+    name: "BOX",
+    y: 5,
+    z: 10,
+  },
+  {
+    name: "Страховка",
+    y: 3,
+    z: 6,
+  },
+];
+
+export { CommonPieOptions, DefaultPieColors, pieData };

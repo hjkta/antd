@@ -2,8 +2,9 @@ import React, { useRef } from "react";
 import BaseTemplate from "ui/templates/BaseTemplate";
 import classNames from "classnames";
 import { ArrowUpOutlined, ArrowDownOutlined } from "@ant-design/icons";
-import { Progress } from "antd";
+import { Progress, Divider } from "antd";
 import { Row, Col, PageHeader, Card } from "ui/components";
+import BadgeStat from "ui/components/BadgeStat/index";
 import * as Highcharts from "highcharts";
 import Variablepie from "highcharts/modules/variable-pie";
 import HighchartsReact from "highcharts-react-official";
@@ -13,8 +14,13 @@ import json from "./json";
 import jsonHours from "./jsonHours";
 import CommonOptions from "./CommonOptions";
 import CommonBarOptions from "./CommonBarOptions";
-import { CommonPieOptions, DefaultPieColors } from "./CommonPieOptions";
 import styles from "./DashboardCopy.module.less";
+
+import {
+  CommonPieOptions,
+  DefaultPieColors,
+  pieData,
+} from "./CommonPieOptions";
 
 interface percProps {
   percent?: number;
@@ -116,33 +122,7 @@ const cashCreatedPieChart: Highcharts.Options = {
       zMin: 0,
       name: "Оформленные продукты",
       size: "100%",
-      data: [
-        {
-          name: "ДК",
-          y: 15,
-          z: 30,
-        },
-        {
-          name: "НК",
-          y: 13,
-          z: 26,
-        },
-        {
-          name: "КК",
-          y: 14,
-          z: 28,
-        },
-        {
-          name: "BOX",
-          y: 5,
-          z: 10,
-        },
-        {
-          name: "Страховка",
-          y: 3,
-          z: 6,
-        },
-      ],
+      data: pieData,
       type: "variablepie",
     },
   ],
@@ -248,6 +228,88 @@ const DashboardCopy: React.FC<IProfileProps> = () => {
         ghost={false}
         title="Статистика управления продаж"
       />
+      <Row gutter={[16, 16]} className={styles.row}>
+        <Col span={8}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              <span>Онлайн продажи</span>
+            </h4>
+            <Row justify="space-around" align="middle">
+              <Col>
+                <BadgeStat
+                  tooltipValue={"Сравнение с предыдущей неделей"}
+                  title={"Кредит"}
+                  value={54}
+                  badgeValue={10}
+                  unsuccess
+                ></BadgeStat>
+              </Col>
+              <Col>
+                <BadgeStat
+                  tooltipValue={"Сравнение с предыдущей неделей"}
+                  title={"Карта"}
+                  value={23}
+                  badgeValue={10}
+                ></BadgeStat>
+              </Col>
+            </Row>
+            <div style={{ padding: "10px" }}>
+              <Divider orientation="left"></Divider>
+            </div>
+          </Card>
+        </Col>
+        <Col span={16}>
+          <Card padding={false} bordered={false} shadow>
+            <h4 className={styles["cell-header"]}>
+              <span>Звонки</span>
+            </h4>
+            <Row justify="space-around" align="middle">
+              <Col>
+                <BadgeStat
+                  tooltipValue={"Выполнение плана месяца по звонкам S2S"}
+                  title={"S2S"}
+                  value={12}
+                  noIcon={true}
+                  badgeValue={25}
+                  unsuccess
+                ></BadgeStat>
+              </Col>
+              <Col>
+                <BadgeStat
+                  tooltipValue={"Выполнение плана месяца по звонкам Inbound"}
+                  title={"Inbound"}
+                  value={15}
+                  noIcon={true}
+                  badgeValue={67}
+                ></BadgeStat>
+              </Col>
+
+              <Col>
+                <BadgeStat
+                  tooltipValue={"Выполнение плана месяца по звонкам ChatBot"}
+                  title={"ChatBot"}
+                  value={15}
+                  noIcon={true}
+                  badgeValue={84}
+                ></BadgeStat>
+              </Col>
+
+              <Col>
+                <BadgeStat
+                  tooltipValue={"Выполнение плана месяца по звонкам Outbound"}
+                  title={"Outbound"}
+                  value={15}
+                  noIcon={true}
+                  badgeValue={85}
+                ></BadgeStat>
+              </Col>
+            </Row>
+            <div style={{ padding: "10px" }}>
+              <Divider orientation="left"></Divider>
+            </div>
+          </Card>
+        </Col>
+      </Row>
       <Row chart={true} gutter={[16, 16]} className={styles.row}>
         <Col span={4} className={styles.col}>
           <Card padding={false} bordered={false} shadow>

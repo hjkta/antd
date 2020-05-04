@@ -1,0 +1,47 @@
+@import "~antd/es/style/themes/default.less";
+
+.badge-stat-wrap {
+  :global {
+    .badge-stat {
+      font-size: 45px;
+      display: grid;
+    }
+    .badge-value {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 5px;
+      padding: 1px 0px;
+      font-size: 13px;
+      font-weight: bold;
+      background-color: grey;
+      color: #fff;
+      border-radius: 15px;
+      min-width: 60px;
+      text-align: center;
+
+      &_success {
+        background-color: #3bd03b;
+        color: #fff;
+      }
+
+      &_unsuccess {
+        background-color: #e92222c0;
+        color: #fff;
+      }
+
+      .anticon {
+        margin-right: 2px;
+        font-size: 14px;
+      }
+
+      .cell-prefix {
+        margin-left: 1px;
+        font-size: 11px;
+      }
+    }
+    .badge-stat-title {
+      color: #666;
+    }
+  }
+}
