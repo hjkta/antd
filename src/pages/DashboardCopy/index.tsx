@@ -241,7 +241,7 @@ const DashboardCopy: React.FC<IProfileProps> = () => {
                   title={"Кредит"}
                   value={54}
                   badgeValue={10}
-                  unsuccess
+                  badgeType={"unsuccess"}
                 ></BadgeStat>
               </Col>
               <Col>
@@ -249,7 +249,8 @@ const DashboardCopy: React.FC<IProfileProps> = () => {
                   tooltipValue={"Сравнение с предыдущей неделей"}
                   title={"Карта"}
                   value={23}
-                  badgeValue={10}
+                  badgeType={"success"}
+                  badgeValue={5}
                 ></BadgeStat>
               </Col>
             </Row>
@@ -266,17 +267,20 @@ const DashboardCopy: React.FC<IProfileProps> = () => {
             <Row justify="space-around" align="middle">
               <Col>
                 <BadgeStat
-                  tooltipValue={"Выполнение плана месяца по звонкам S2S"}
+                  tooltipValue={
+                    "Выполнение плана месяца по звонкам S2S без таргета"
+                  }
                   title={"S2S"}
                   value={12}
                   noIcon={true}
                   badgeValue={25}
-                  unsuccess
                 ></BadgeStat>
               </Col>
               <Col>
                 <BadgeStat
-                  tooltipValue={"Выполнение плана месяца по звонкам Inbound"}
+                  tooltipValue={
+                    "Выполнение плана месяца по звонкам Inbound без таргета"
+                  }
                   title={"Inbound"}
                   value={15}
                   noIcon={true}
@@ -286,7 +290,9 @@ const DashboardCopy: React.FC<IProfileProps> = () => {
 
               <Col>
                 <BadgeStat
-                  tooltipValue={"Выполнение плана месяца по звонкам ChatBot"}
+                  tooltipValue={
+                    "Выполнение плана месяца по звонкам ChatBot без таргета"
+                  }
                   title={"ChatBot"}
                   value={15}
                   noIcon={true}
@@ -296,7 +302,9 @@ const DashboardCopy: React.FC<IProfileProps> = () => {
 
               <Col>
                 <BadgeStat
-                  tooltipValue={"Выполнение плана месяца по звонкам Outbound"}
+                  tooltipValue={
+                    "Выполнение плана месяца по звонкам Outbound без таргета"
+                  }
                   title={"Outbound"}
                   value={15}
                   noIcon={true}

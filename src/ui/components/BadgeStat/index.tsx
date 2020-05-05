@@ -8,7 +8,7 @@ type BadgeStatProps = {
   title?: string;
   value?: number;
   badgeValue?: number;
-  unsuccess?: boolean;
+  badgeType?: string;
   prefix?: string;
   tooltipValue?: string;
   noIcon?: boolean;
@@ -18,22 +18,23 @@ const BadgeStat: React.FC<BadgeStatProps> = ({
   title,
   value,
   badgeValue,
-  unsuccess = false,
+  badgeType = "default",
   prefix = "%",
   tooltipValue = "",
   noIcon = false,
 }) => {
-  const successTypeStyle =
-    unsuccess === true ? "badge-value_unsuccess" : "badge-value_success";
+  let successTypeStyle = `badge-value_${badgeType}`;
+
+  let iconObj: any = {
+    success: <RiseOutlined></RiseOutlined>,
+    unsuccess: <FallOutlined></FallOutlined>,
+    default: "",
+  };
 
   let iconSuccessTypeStyle;
+
   if (noIcon !== true) {
-    iconSuccessTypeStyle =
-      unsuccess === true ? (
-        <FallOutlined></FallOutlined>
-      ) : (
-        <RiseOutlined></RiseOutlined>
-      );
+    iconSuccessTypeStyle = iconObj[badgeType];
   }
 
   const prefixWrapped = <span className={`cell-prefix`}>{prefix}</span>;
