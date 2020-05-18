@@ -26,7 +26,13 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
   return (
     <Layout className={styles["main-layout"]}>
-      <Sider width={250} trigger={null} className={styles.slider} collapsible collapsed={collapsed}>
+      <Sider
+        width={250}
+        trigger={null}
+        className={styles.slider}
+        collapsible
+        collapsed={collapsed}
+      >
         <img src={collapsed ? logoSm : logo} className={styles.logo} alt="" />
         <Menu mode="inline" className={styles.menu} theme="dark">
           <Menu.Item key="a1">
@@ -35,12 +41,12 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
               <span>Главная</span>
             </Link>
           </Menu.Item>
-          {/*<Menu.Item key="a2">
-            <Link to="/profile">
+          <Menu.Item key="a2">
+            <Link to="/dashboard_copy">
               <ProfileOutlined />
-              <span>Профиль</span>
+              <span>Дашборд</span>
             </Link>
-          </Menu.Item>*/}
+          </Menu.Item>
           <Menu.Item key="a3">
             <Link to="/report">
               <PieChartOutlined />
@@ -99,12 +105,15 @@ const BaseTemplate: React.FC<IBaseTemplateProps> = ({ children }) => {
       </Sider>
       <Layout>
         <Header>
-          {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-            className: "trigger",
-            onClick: () => {
-              setCollapsed(!collapsed);
-            },
-          })}
+          {React.createElement(
+            collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
+            {
+              className: "trigger",
+              onClick: () => {
+                setCollapsed(!collapsed);
+              },
+            }
+          )}
         </Header>
         <Layout className={styles["inner-layout"]}>{children}</Layout>
       </Layout>
